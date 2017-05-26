@@ -1,0 +1,62 @@
+<style>
+    .welcome{
+        display: block;
+        width:200px;height:30px;
+        text-align: center;
+        line-height: 30px;
+        position: fixed;
+        left:0;right:0;
+        margin:auto;bottom: 50px;
+        text-decoration: none;
+        border:1px solid #ccc;
+        border-radius: 5px;
+        color:#000;
+        background: linear-gradient(#fff,#ccc);
+    }
+    .view-animate {
+        transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+        position: absolute;
+        width:100%;
+    }
+    .view-animate.ng-enter, .view-animate.ng-leave {
+        display:block;
+        left:0px;
+    }
+    .view-animate.ng-enter {
+        left:100%;
+    }
+    .view-animate.ng-enter.ng-enter-active {
+        left:0px;
+    }
+    .view-animate.ng-leave.ng-leave-active {
+        left:-100%;
+    }
+    .mui-btn.fa{
+        padding: 3px 20px;
+        background: yellowgreen;
+        border-radius: 5px;
+        font-size: 20px;
+        text-align: center;
+        color: #fff;
+    }
+
+</style>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"  href="#!/havelogs"></a>
+    <h1 class="mui-title">{{info[0].title}}</h1>
+</header>
+<div class="mui-card"  style="margin-top: 59px;">
+
+    <div class="mui-card-content">
+        <div class="mui-card-content-inner" style="color: #000;padding: 25px 15px;font-size: 16px">
+            {{info[0].con}}
+        </div>
+    </div>
+    <div class="mui-card-footer" style="padding: 5px 15px;">
+
+        <div class="mui-card-content-inner" style="padding: 5px 0;">
+            <p>发信人：{{info[0].uname}}</p>
+            <p>时间：{{info[0].ltime}}</p>
+        </div>
+    </div>
+</div>

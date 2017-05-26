@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>添加电话</title>
+</head>
+<style>
+    div{
+        width: 500px;
+        height: 50px;
+        line-height: 50px;
+    }
+    span{
+        display: block;
+        float: left;
+        width: 180px;
+        height: 100%;
+    }
+    input.info{
+        width: 260px;
+        height: 34px;
+        box-sizing: border-box;
+        padding: 0 10px;
+    }
+    button{
+        padding: 8px 20px;
+        margin-top: 20px;
+        margin-left: 20px;
+        background: rgba(0,0,0,.5);
+        border-radius: 3px;
+        border: 0;
+        outline: none;
+        transition: all .5s;
+        font-size: 16px;
+    }
+    button:hover{
+        box-shadow: 0 5px 5px rgba(0,0,0,.5);
+    }
+    .submit{
+        padding: 8px 15px;
+        border-radius: 5px;
+        background: rgb(35,235,185);
+        color: #fff;
+        cursor: pointer;
+        margin: 0 5px;
+        border:0;
+    }
+</style>
+<body>
+<form action="/admin/addphoneInfo">
+    <div><span>姓名：</span><input class="info" type="text" name="pname"></div>
+    <div><span>电话号码：</span><input class="info" type="text" name="pphone"></div>
+    <input type="button" class="submit" value="提交">
+</form>
+</body>
+<script>
+    var form=document.forms[0];
+    var submits=document.querySelector(".submit");
+    var pname=form.pname;
+    var pphone=form.pphone;
+    submits.onclick=function () {
+        if(pname.value==""){
+            alert("请输入姓名！");
+        }else if(pphone.value==""){
+            alert("请输入电话号码！");
+        }else{
+            form.submit();
+        }
+    }
+</script>
+</html>

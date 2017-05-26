@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>work后台</title>
+</head>
+<style>
+    @font-face {
+        font-family: 'iconfont';
+        src: url('/fonts/iconfont.eot');
+        src: url('/fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/iconfont.woff') format('woff'),
+        url('/fonts/iconfont.ttf') format('truetype'),
+        url('/fonts/iconfont.svg#iconfont') format('svg');
+    }
+</style>
+<link rel="stylesheet" href="/css/default.css">
+<link rel="stylesheet" href="/css/admin.css">
+<script src="/js/jquery.min.js"></script>
+<script src="/js/admin.js"></script>
+<body>
+    <!--top-->
+    <div class="topbox">
+        <div class="top">
+            <div class="topleft">
+                <b>work后台</b>
+            </div>
+            <div class="topright">
+                <span><i class="iconfont">&#xe6c5;</i>您好！<%=name%>,欢迎您登录</span>
+                <a href="admin/exitadmin"><i class="iconfont">&#xe63b;</i></a>
+            </div>
+        </div>
+    </div>
+    <!--top end-->
+    <!--main-->
+    <div class="mainbox">
+        <div class="main">
+            <div class="center">
+                <ul class="fu">
+                    <li>
+                        <i class="iconfont">&#xe729;</i>
+                        <a href="javascript:;"><i class="iconfont">&#xe62d;</i>用户管理</a>
+                        <ul class="son">
+                            <li><a href="/admin/adduser" target="right"><i class="iconfont">&#xe724;</i>用户添加</a></li>
+                            <li><a href="/admin/guanliuser" target="right"><i class="iconfont">&#xe724;</i>用户管理</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="iconfont">&#xe729;</i>
+                        <a href="javascript:;"><i class="iconfont">&#xe63c;</i>新闻管理</a>
+                        <ul class="son">
+                            <li><a href="" target="right"><i class="iconfont">&#xe724;</i>添加新闻</a></li>
+                            <li><a href="/admin/showCon" target="right"><i class="iconfont">&#xe724;</i>管理新闻</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="iconfont">&#xe729;</i>
+                        <a href="javascript:;"><i class="iconfont">&#xe63c;</i>电话管理</a>
+                        <ul class="son">
+                            <li><a href="/admin/addphone" target="right"><i class="iconfont">&#xe724;</i>添加电话</a></li>
+                            <li><a href="/admin/guanliphone" target="right"><i class="iconfont">&#xe724;</i>所有电话</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="iconfont">&#xe612;</i>
+                        <a href="/admin/guanlimessage" target="right"><i class="iconfont">&#xe661;</i>信息管理</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="show">
+            <iframe src="" frameborder="0" name="right"></iframe>
+        </div>
+    </div>
+    <!--main end-->
+</body>
+</html>

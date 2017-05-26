@@ -1,0 +1,59 @@
+<style>
+    .view-animate {
+        transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+        position: absolute;
+        width:100%;
+    }
+    .view-animate.ng-enter, .view-animate.ng-leave {
+        display:block;
+        left:0px;
+    }
+    .view-animate.ng-enter {
+        left:100%;
+    }
+    .view-animate.ng-enter.ng-enter-active {
+        left:0px;
+    }
+    .view-animate.ng-leave.ng-leave-active {
+        left:-100%;
+    }
+</style>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="#!/"  ng-click="change('one')"></a>
+    <h1 class="mui-title">设置</h1>
+</header>
+<div id="tabbar-with-map" style="overflow: hidden">
+    <div class="title"></div>
+    <ul class="mui-table-view" style="margin-top: 59px">
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right" href="#!/setuser">
+                账号与安全
+            </a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right" href="#!/dataview">
+                好友热度
+            </a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">
+                通用
+            </a>
+        </li>
+    </ul>
+    <ul class="mui-table-view" style="margin-top: 25px;">
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">
+                关于
+            </a>
+        </li>
+    </ul>
+    <ul class="mui-table-view" style="margin-top: 25px;">
+        <li class="mui-table-view-cell">
+            <a style="text-align: center;color: #FF3B30;" href="/logout">
+                退出登录
+            </a>
+        </li>
+    </ul>
+</div>
+</div>

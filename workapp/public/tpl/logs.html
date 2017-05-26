@@ -1,0 +1,70 @@
+<style>
+    .mui-table-view-cell{
+        position: relative;
+    }
+    .mui-navigate-right{
+        position: relative;
+        z-index:1;
+        background:#fff;
+        border-bottom: 1px solid #ccc;
+    }
+    .mui-icon-trash{
+        position: absolute;
+        right:10px;top:10px;bottom:3px;
+        margin:auto;
+    }
+    .view-animate {
+        transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+        position: absolute;
+        width:100%;
+    }
+    .view-animate.ng-enter, .view-animate.ng-leave {
+        display:block;
+        left:0px;
+    }
+    .view-animate.ng-enter {
+        left:100%;
+    }
+    .view-animate.ng-enter.ng-enter-active {
+        left:0px;
+    }
+    .view-animate.ng-leave.ng-leave-active {
+        left:-100%;
+    }
+    .muis{
+        position: absolute;
+        left:10px;
+        top:5px;
+        margin-right:10px;
+    }
+    .muii{
+        position: absolute;
+        left:0;
+    }
+</style>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"  href="#!/"  ng-click="change('one')"></a>
+    <h1 class="mui-title">日志</h1>
+</header>
+<div class="mui-content" style="overflow: hidden;padding-top: 32px;">
+    <ul class="mui-table-view" style="margin-top: 27px;">
+        <li class="mui-table-view-cell" >
+            <a href="#!/newlogs" class="mui-navigate-right">
+                新建日志
+            </a>
+            <span class="mui-icon mui-icon-trash"></span>
+        </li>
+        <li class="mui-table-view-cell" >
+            <a href="#!/sendlogs" class="mui-navigate-right">
+                已发日志
+            </a>
+            <span class="mui-icon mui-icon-trash"></span>
+        </li>
+        <li class="mui-table-view-cell" >
+            <a href="#!/havelogs" class="mui-navigate-right">
+                收到日志
+            </a>
+            <span class="mui-icon mui-icon-trash"></span>
+        </li>
+    </ul>
+</div>

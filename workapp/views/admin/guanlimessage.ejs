@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/guanli.css">
+</head>
+<body>
+    <table class="table table-striped">
+            <tr>
+                <th>发消息者</th>
+                <th>收消息者</th>
+                <th>消息标题</th>
+                <th>消息内容</th>
+                <th>时间</th>
+                <th>操作</th>
+            </tr>
+      <%for(var i=0;i<result.length;i++){%>
+        <tr>
+            <td><%=result[i].faid%></td>
+            <td><%=result[i].jieid%></td>
+            <td><%=result[i].title%></td>
+            <td><%=result[i].con%></td>
+            <td><%=result[i].ltime%></td>
+            <td><a href="/admin/delmessage?lid=<%=result[i].lid%>">删除</a></td>
+        </tr>
+        <%}%>
+    </table>
+    <a href="/admin/guanlimessage?page=<%=lastpage%>">上一页</a>
+    <a href="/admin/guanlimessage?page=<%=nextpage%>">下一页</a>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>所有管理员</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/css/guanli.css" />
+	<script src="/js//jquery.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<table class="table table-striped">
+			<thead>
+				<th>账户</th>
+				<th>姓名</th>
+				<th>密码</th>
+				<th>权限</th>
+				<th>操作</th>
+			</thead>
+			<tbody>
+            <%for(var i=0;i<result.length;i++){%>
+			<tr>
+				<td><%=result[i].uname%></td>
+				<td><%=result[i].xingming%></td>
+				<td><%=result[i].upass%></td>
+				<td><%=result[i].uroot%></td>
+				<td>
+					<a href="/admin/deluser?uid=<%=result[i].uid%>">删除</a>
+				</td>
+			</tr>
+            <%}%>
+			</tbody>
+		</table>
+	</div>	
+</body>
+</html>

@@ -1,0 +1,51 @@
+<style>
+
+    .mui-segmented-control .mui-control-item.mui-active {
+        color: #fff;
+        background-color: #FFDE11;
+    }
+    .mui-segmented-control .mui-control-item{
+        color: #FFDE11;
+        border-color: #FFDE11;
+        border-left: 1px solid #FFDE11;
+    }
+    button{
+        margin:0px 10px;
+    }
+</style>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="#!/logs"></a>
+    <h1 class="mui-title">已发日志</h1>
+</header>
+<div class="mui-content">
+    <div style="padding: 10px 10px;text-align: center;margin-top: 6px;">
+        <!--<div id="segmentedControl" class="mui-segmented-control" style="margin-top: 6px;">-->
+            <button class="mui-btn mui-btn-primary mui-btn-outlined"  ng-click="allFun()">所有日志</button>
+            <button class="mui-btn mui-btn-primary mui-btn-outlined" ng-click="duFun()">未读日志</a>
+            <button class="mui-btn mui-btn-primary mui-btn-outlined" ng-click="unFun()">已读日志</button>
+        <!--</div>-->
+    </div>
+    <div class="mui-content" style="overflow: hidden">
+        <ul class="mui-table-view" >
+            <li class="mui-table-view-cell mui-media" ng-repeat="item in du">
+                <a href="#!/haveInfo/{{item.lid}}">
+                    <div class="mui-media-body">
+                        <span style="color: #007aff;float: left;" >{{item.title}}</span>
+                        <span class="mui-badge" style="float: right;background-color:#FFDE11;color:#fff">未读</span>
+                        <br>
+                        <p class='mui-ellipsis' style="color:#0A0A0A ;margin-top: 5px">{{item.uname}}</p>
+                    </div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media" ng-repeat="item in un">
+                <a href="#!/haveInfo/{{item.lid}}">
+                    <div class="mui-media-body">
+                        <span style="color: #007aff;float: left;" >{{item.title}}</span>
+                        <br>
+                        <p class='mui-ellipsis' style="color:#0A0A0A ;margin-top: 5px">{{item.uname}}</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<style type="text/css">
+    .tijiao{
+        margin: auto;
+        position: fixed;
+        left: 0;right: 0;
+        bottom: 100px;
+        width: 120px;
+        height: 40px;
+        background: yellowgreen;
+        border-radius: 5px;
+        font-size: 22px;
+        text-align: center;
+        line-height: 40px;
+        color: #fff;
+    }
+    .tijiao>a{
+        color: #fff;
+    }
+
+    .view-animate {
+        transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .5s;
+        position: absolute;
+        width:100%;
+
+    }
+
+    .view-animate.ng-enter, .view-animate.ng-leave {
+        display:block;
+        left:0px;
+    }
+
+    .view-animate.ng-enter {
+        left:100%;
+    }
+    .view-animate.ng-enter.ng-enter-active {
+        left:0px;
+
+    }
+    .view-animate.ng-leave.ng-leave-active {
+
+        left:-100%;
+    }
+</style>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="#!/todo"></a>
+    <h1 class="mui-title">新建内容</h1>
+
+</header>
+<div class="mui-content">
+
+    <div class="con" style="padding:5px">
+    <textarea name="" ng-model="con"  id="" style="width:100%;height:150px;">
+
+    </textarea>
+    <div class="tijiao" ng-click="add()"><a href="#!/todo">提交</a></div>
+    </div>
+</div>

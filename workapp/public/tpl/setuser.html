@@ -1,0 +1,83 @@
+<style>
+    .view-animate {
+        transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+        position: absolute;
+        width:100%;
+    }
+    .view-animate.ng-enter, .view-animate.ng-leave {
+        display:block;
+        left:0px;
+    }
+    .view-animate.ng-enter {
+        left:100%;
+    }
+    .view-animate.ng-enter.ng-enter-active {
+        left:0px;
+    }
+    .view-animate.ng-leave.ng-leave-active {
+        left:-100%;
+    }
+    .mui-page-content{
+        position:relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #efeff4;
+    }
+    .fa{
+        padding: 3px 20px;
+        background: yellowgreen;
+        border-radius: 5px;
+        font-size: 20px;
+        text-align: center;
+        color: #fff;
+    }
+</style>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="#!/set" ></a>
+    <h1 class="mui-title">账户与安全</h1>
+</header>
+<div class="mui-content" style="margin-top: 9px;">
+    <div class="con" style="padding:5px">
+        <form class="mui-input-group">
+            <div class="mui-input-row">
+                <label>姓名</label>
+                    <input type="text" class="mui-input-clear" placeholder="输入标题" name="name" ng-model="uname">
+            </div>
+            <div class="mui-input-row">
+                <label>确认旧密码</label>
+                <input type="text" class="mui-input-clear" placeholder="输入旧密码" name="name" ng-model="upassold">
+
+            </div>
+            <div class="mui-input-row">
+                <label>输入新密码</label>
+                    <input type="text" class="mui-input-clear" placeholder="输入新密码" name="name" ng-model="upass1">
+            </div>
+            <div class="mui-input-row">
+                <label>再次输入</label>
+                    <input type="text" class="mui-input-clear" placeholder="再次输入新密码" name="name" ng-model="upass2">
+            </div>
+            <div class="mui-button-row">
+                <button type="button" class="mui-btn fa"  ng-click="send()">确认修改</button>
+            </div>
+        </form>
+        <style>
+            .notice{
+                position: fixed;
+                width:200px;
+                height:50px;
+                line-height: 50px;
+                text-align: center;
+                margin:40px 80px;
+                border-radius: 10px;
+                background: rgba(0,0,0,0.3);
+            }
+        </style>
+        <div class="notice" ng-show="isshow">
+           {{con}}
+        </div>
+    </div>
+</div>

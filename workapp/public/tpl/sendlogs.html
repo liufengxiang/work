@@ -1,0 +1,54 @@
+<style>
+    .welcome{
+        display: block;
+        width:200px;height:30px;
+        text-align: center;
+        line-height: 30px;
+        position: fixed;
+        left:0;right:0;
+        margin:auto;bottom: 50px;
+        text-decoration: none;
+        border:1px solid #ccc;
+        border-radius: 5px;
+        color:#000;
+        background: linear-gradient(#fff,#ccc);
+    }
+    .view-animate {
+        transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+        position: absolute;
+        width:100%;
+    }
+    .view-animate.ng-enter, .view-animate.ng-leave {
+        display:block;
+        left:0px;
+    }
+    .view-animate.ng-enter {
+        left:100%;
+    }
+    .view-animate.ng-enter.ng-enter-active {
+        left:0px;
+    }
+    .view-animate.ng-leave.ng-leave-active {
+        left:-100%;
+    }
+    .mui-btn.fa{
+        background:#FFDE11;
+        border:1px solid #FFDE11;
+        color:#fff;
+    }
+
+</style>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"  href="#!/logs"></a>
+    <h1 class="mui-title">已发日志</h1>
+</header>
+<ul class="mui-table-view" style="margin-top: 59px">
+    <li class="mui-table-view-cell mui-media" ng-repeat="item in info">
+        <a href="#!/sendInfo/{{item.lid}}">
+            <div class="mui-media-body">
+                <span style="color: #007aff">{{item.title}}</span>
+                <p class='mui-ellipsis' style="color:#0A0A0A ;margin-top: 5px">{{item.uname}}({{item.xingming}})</p>
+            </div>
+        </a>
+    </li>
+</ul>
