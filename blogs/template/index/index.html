@@ -1,0 +1,64 @@
+{include file="index/header.html"}
+<link rel="stylesheet" href="{CSS_PATH}/index.css" />
+<script src="{JS_PATH}/index.js"></script>
+<div class="blogs">OUR BLOGS</div>
+<div class="bannerbox">
+    <div class="banner">
+        <div class="img">
+            <div class="imgli" style="opacity: 1;background: url({IMG_PATH}/banner1.jpg)"></div>
+            <div class="imgli" style="background: url({IMG_PATH}/banner2.jpg)"></div>
+            <div class="imgli" style="background: url({IMG_PATH}/banner3.jpg)"></div>
+        </div>
+        <div class="btn">
+            <span style="background: #EA6F5A"></span><span></span><span></span>
+        </div>
+    </div>
+    <div class="sousuo">
+        <input type="text"><span>搜索</span>
+    </div>
+    <div class="fenleibox">
+        <div class="fenleili" style="padding: 5px;border-bottom-style: solid;">最新</div>
+        <div class="fenleili">最热</div>
+        {foreach $resultfenlei $a}
+        <div class="fenleili">{$a['cname']}</div>
+        {/foreach}
+    </div>
+
+
+
+
+    <div class="titlebox" style="display: block">
+        {foreach $resultnew as $v}
+        <div class="title">
+            <a href="index.php?f=lists&id={$v['id']}">{$v["stitle"]}</a>
+            <span>{$v['stime']}</span>
+            <h4>作者：{$v['sname']}</h4>
+        </div>
+        {/foreach}
+    </div>
+    <div class="titlebox">
+        {foreach $resulthot as $b}
+        <div class="title">
+            <a href="index.php?f=lists&id={$b['id']}">{$b["stitle"]}</a>
+            <span>{$b['stime']}</span>
+            <h4>作者：{$v['sname']}</h4>
+        </div>
+        {/foreach}
+    </div>
+    {foreach $result as $c}
+    <div class="titlebox">
+        {foreach $c as $d}
+        <div class="title">
+            <a href="index.php?f=lists&id={$d['id']}">{$d["stitle"]}</a>
+            <span>{$d['stime']}</span>
+            <h4>作者：{$v['sname']}</h4>
+        </div>
+        {/foreach}
+    </div>
+    {/foreach}
+</div>
+
+
+
+
+{include file="index/footer.html"}

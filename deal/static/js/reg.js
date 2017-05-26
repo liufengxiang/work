@@ -1,0 +1,65 @@
+
+$(window).ready(function(){
+
+    $("#form").validate({
+        rules:{
+            username:{
+                required:true,
+                minlength:5,
+                remote:{
+                    url:"index.php?m=index&f=login&a=userCheck",
+                    data:{
+                        username:function(){
+                            return $("#username").val()
+                        }
+                    }
+                }
+            },
+            nickname:{
+                required:true,
+            },
+            password:{
+                required:true,
+                minlength:5
+            },
+            password2:{
+                required:true,
+                equalTo:"#Password1"
+            },
+            code:{
+                required:true,
+                remote:{
+                    url:"index.php?m=index&f=login&a=checkCode",
+                    data:{
+                        code:function(){
+                            return $("#code").val();
+                        }
+                    }
+                }
+            }
+        },
+        messages:{
+            username:{
+                required:"请输入用户名",
+                minlength:"用户名至少输入5位",
+                remote:"用户名重复"
+            },
+            nickname:{
+                required:"请填写您的姓名"
+            },
+            password:{
+                required:"请输入密码",
+                minlength:"密码至少输入5位"
+            },
+            password2:{
+                required:"请确认密码",
+                equalTo:"两次密码不一致"
+            },
+            code:{
+                required:"请输入验证码",
+                remote:"验证码有误"
+            }
+        }
+    })
+
+})

@@ -1,0 +1,113 @@
+body,html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background: #31302E;
+}
+h2{
+    text-align: center;
+    padding: 20px 0;
+}
+.ertitle{
+    text-align: center;
+}
+em,b{
+    margin: 0 30px;
+}
+.content{
+    width: 1000px;
+    margin: 0 auto;
+    padding: 50px;
+}
+.chuli{
+    width: 1000px;
+    margin:30px auto;
+}
+.czcgbox{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left:0;
+    top:0;
+    display: none;
+    z-index: 9;
+}
+.czcg{
+    position: fixed;
+    width: 100px;
+    height:50px;
+    background: rgba(0,0,0,.7);
+    border-radius: 5px;
+    text-align: center;
+    line-height: 50px;
+    top: 50%;
+    left: 50%;
+    margin-left:-25px;
+    margin-top: -50px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10;
+}
+.liuyanbox{
+    width: 100%;
+    margin:30px 0;
+}
+.lymessage{
+    height: 60px;
+    width: 100%;
+    margin:20px 0;
+}
+.touxiang{
+    width: 60px;
+    height:60px;
+    float: left;
+    border:2px solid #333;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center center;
+}
+.lymessage>a{
+   display: block;
+    color: #00a2d4;
+    margin: 20px 0 10px 100px;
+}
+.lymessage>span{
+    margin-left: 30px;
+}
+.lycon{
+    text-indent: 2em;
+    margin: 10px 0;
+}
+.huifu1con{
+    resize: none;
+    display:none;
+    margin: 10px 10px;
+}
+.huifu2con{
+    resize: none;
+    display:none;
+    margin: 10px 10px;
+}
+.lyson{
+    border-left: 3px solid #ccc;
+    width: 100%;
+    padding: 5px;
+    margin: 10px;
+}
+.lyson>p{
+    margin: 5px;
+}
+.lyson>p>a{
+    color: #00a2d4;
+    margin: 0 10px;
+}
+.lyson>p>span{
+    margin-left: 20px;
+}
+.lyson>span{
+    margin-left: 10px;
+    color: #ccc;
+}

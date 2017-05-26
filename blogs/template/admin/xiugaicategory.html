@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="index.php?m=admin&f=mains&a=xiugaicategory2" method="post">
+    {foreach $result $k $v}
+    <select name="pid" id="">
+        {$str}
+    </select>
+    <input type="text" name="cname" value="{$k['cname']}">
+    <input type="hidden" name="cid" value="{$k['cid']}">
+    {/foreach}
+    <input type="submit" value="修改">
+</form>
+</body>
+</html>

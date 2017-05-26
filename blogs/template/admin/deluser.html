@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css">
+<body>
+    <table class="table table-striped" style="text-align: center">
+        <caption style="text-align: center;font-size: 26px">用户列表</caption>
+        <tr>
+            <th>id</th>
+            <th>用户名</th>
+            <th>密码</th>
+            <th>操作</th>
+        </tr>
+        {foreach $result $v $k}
+        <tr>
+            <td>{$v['id']}</td>
+            <td>{$v["name"]}</td>
+            <td>{$v['password']}</td>
+            <td>{if $v['t']==1}{else}<a href="index.php?m=admin&f=mains&a=deluser2&id={$v['id']}">删除</a>{/if}</td>
+        </tr>
+        {/foreach}
+    </table>
+<p style="text-align: center">{$page}</p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{include file="index/header.html"}
+<!--main-->
+<div class="mainbox">
+    <div class="main">
+        <ul>
+            <li class="fenleimain">分类</li>
+            {foreach $flresult as $v}
+            <li><a href="index.php?f=lists&cid={$v['cid']}">{$v['cname']}</a></li>
+            {/foreach}
+        </ul>
+    </div>
+</div>
+<!--main end-->
+<div class="show">
+    <div class="showcon">
+        <ul>
+            {foreach $listresult as $v}
+            <li>
+                <a href="index.php?f=show&wid={$v['wid']}">
+                    <div class="showimg" style="background-image: url({if $v['wimg1']}{$v['wimg1']}{else}{IMG_PATH}/imgbg.jpg{/if})"></div>
+                    <div class="showmess">
+                        <p class="showmess-name">{$v['wname']}</p>
+                        <div class="showmess-jiage">￥{$v['wmuch']}</div>
+                    </div>
+                </a>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+</div>
+
+{include file="index/footer.html"}

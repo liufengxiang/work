@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" content="text/html;charset=utf-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css">
+<script type="text/javascript" charset="utf-8" src="{JS_PATH}/utf8-php/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="{JS_PATH}/utf8-php/ueditor.all.js"></script>
+<body>
+<form action="index.php?m=admin&f=mains&a=xiugaicontent" method="post" role="form" style="margin:20px;">
+    {foreach $result $k $v}
+    <h3 style="text-align: center">{$k['stitle']}</h3>
+    <div style="text-indent: 2em">{$k['scon']}</div>
+    <br><br><br>
+    <div class="form-group">
+        <label for="name">是否审核</label>
+        <label class="checkbox-inline">
+            <input type="radio" name="status" {if $k['status']==0}checked{/if} value="0" >未审核
+        </label>
+        <label class="checkbox-inline">
+            <input type="radio" name="status" {if $k['status']==1}checked{/if} value="1">审核中
+        </label>
+        <label class="checkbox-inline">
+            <input type="radio" name="status" {if $k['status']==2}checked{/if} value="2">审核未通过
+        </label>
+        <label class="checkbox-inline">
+            <input type="radio" name="status" {if $k['status']==3}checked{/if} value="3">审核通过
+        </label>
+    </div>
+    <input type="hidden" name="id" value="{$k['id']}">
+    <button type="submit" class="btn btn-default">提交审核</button>
+    {/foreach}
+</form>
+</body>
+</html>
+<script type="text/javascript">
+    var ue = UE.getEditor('container');
+    ue.setDisabled();
+</script>

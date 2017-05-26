@@ -1,0 +1,114 @@
+* gs_admin 管理员表
+    *  aid  int 11 主键 自增
+    *  aname varchar 50 
+    *  apass varchar 32
+
+* gs_user  用户表
+    *  uid init 11
+    *  uname varchar 50 帐号
+    *  unickname varchar 50 用户昵称
+    *  upass varchar 32 密码  
+    *  uimage varchar 255 头像
+    *  udate timestamp current_time 注册时间
+
+* gs_category  分类表
+    *  cid int 11 主键 自增
+    *  cname varchar 50 分类名称
+    *  pid int 11 父分类id
+
+* position 推荐位
+    * posid 推荐位id
+    * posname 推荐位名称 varchar 50
+
+* gs_notice 公告
+    *  nid int 11 主键 自增
+    *  ntitle varchar 255  标题
+    *  ncon  varchar 5000  内容
+    *  ntime  timesTamp current_time 日期
+    *  nsummary varchar 255 摘要
+    *  nfile varchar 255 公告附件
+    *  nname varchar 50  发布人
+
+* 精品课程 gs_course
+    *  coid
+    *  label  课程标签
+    *  title  标题
+    *  etitle 英文标题 varchar 255
+    *  con    内容
+    *  ntime   发表日期
+    *  hits    点击量
+    *  summary 摘要
+    *  radios  varchar 255
+    *  name  发布人
+    *  teacher 主讲人
+    *  timgurl  主讲人头像
+    *  cimgurl  课程图片
+    *  tzhicheng  职称
+    *  cposition  tinyint 8 1表示院级精品，2表示校级精品 3表示其他
+
+* 精品课程留言 gs_course_msg    
+    *  mid 
+    *  mcon  留言内容 1000
+    *  mtime 留言时间
+    *  sid   被留言的文章 ->show
+    *  good 被点赞
+    *  uid  留言者id ->uid
+
+* 学生工作 gs_stuwork
+    *  stid
+    *  cid     分类 ->category
+    *  title  标题 varchar 255
+    *  etitle 英文标题 varchar 255
+    *  con    内容 varchar 10000
+    *  time   发表日期
+    *  hits    点击量 int 11
+    *  summary 摘要 varchar 300
+    *  name  发布人 varchar 50
+
+* 校企合作 gs_cooperation +
+    *  coid int 11 主键 自增
+    *  coname  企业名称 varchar 100
+    *  introduce 企业介绍 varchar 3000
+    *  ntime   发表日期 也就是这条数据存放的时间
+    *  cotime   合作日期  也就是用户自己填的日期 varchar 255
+    *  logoimg   企业logo
+    *  link   企业官网链接
+    *  state  合作状态 tinyint  1 代表合作中  2代表取消合作
+    *  name  发布人
+ 
+* gs_news  新闻表
+    *  nid
+    *  cid     分类 ->category
+    *  title  标题 varchar 255
+    *  con    内容 varchar 3000
+    *  ntime   日期
+    *  hits    点击量
+    *  summary 摘要  varchar 300
+    *  name  发布人  varchar 50
+    *  nimgurl  新闻图片 varchar 255
+    *  nposition  tinyint 8   1表示大赛获奖，2表示院部活动，3表示其他
+
+* 新闻留言 gs_news_msg   
+    *  mid 
+    *  mcon  留言内容  varchar 1000
+    *  mtime 留言时间
+    *  sid   被留言的文章
+    *  good 被点赞
+    *  uid  留言者id
+
+
+添加精品课程  index.php?m=admin&f=art&a=addcourse
+添加学生工作  index.php?m=admin&f=art&a=addstuwork
+添加新闻  index.php?m=admin&f=art&a=addnews
+添加公告  index.php?m=admin&f=art&a=addnotice
+
+
+
+遗留的坑：
+	首页的赛事
+	底部活动的图片
+
+
+
+
+

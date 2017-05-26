@@ -1,0 +1,58 @@
+body{
+    background: #FCD83E;
+}
+.box{
+    width: 400px;
+    height: 350px;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    top:0;right: 0;
+    bottom:0;
+    margin: auto;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow:0 0 10px #F2C91F, 0 10px 30px rgba(0,0,0,.5);
+}
+h1{
+    font-weight: 400;
+    margin: 20px 0;
+}
+input {
+   width: 70%;
+    height: 40px;
+    margin-top: 12px;
+    border:0;
+    font-size: 16px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    transition: outline .5s;
+    background: rgba(0,0,0,.05);
+}
+.yanzhengbox{
+    width: 70%;
+    height: 100%;
+    margin-left: 15%;
+    text-align: left;
+}
+#code{
+    width: 50%;
+}
+img{
+    width: 110px;
+    height: 40px;
+    border: 0;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+#login{
+    margin-top: 30px;
+    background: #FCD83E;
+    height: 44px;
+    border-radius: 3px;
+    font-size: 20px;
+    transition: all .5s;
+}
+#login:hover{
+    box-shadow: 0 5px 10px rgba(0,0,0,.3);
+}

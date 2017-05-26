@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<link rel="stylesheet" href="{CSS_PATH}/index/public.css">-->
+    <link rel="stylesheet" href="{CSS_PATH}/index/reg.css">
+    <script src="{JS_PATH}/jquery-min.js"></script>
+    <script src="{JS_PATH}/jquery.validate.js"></script>
+    <script src="{JS_PATH}/reg.js"></script>
+</head>
+<body>
+<div class="lktop">
+	<a href="{FILE_URL}"><img src="{INDEX_PATH}/images/logo1.png" title="返回首页" alt=""></a>
+</div>
+<div class="bigbox" style="height: 460px;padding: 40px">
+	<form action="index.php?m=index&f=login&a=addReg" method="post" id="form">
+		<div class="lable">
+		<input type="text" placeholder="请填写您的账号" class="form-control" id="username" name="username" autocomplete="off">
+		</div>
+		<div class="lable">
+		<input type="text" placeholder="请填写您的姓名" class="form-control" id="nickname" name="nickname" autocomplete="off">
+		</div>
+		<div class="lable">
+		<input type="password" placeholder="请输入密码" class="form-control" id="Password1" name="password" autocomplete="off">
+		</div>
+		<div class="lable">
+		<input type="password" placeholder="确认密码" class="form-control" id="Password2" name="password2" autocomplete="off">
+		</div>
+		<div class="yanzheng lable" id="regs">
+			<input type="text" id="code" class="form-control" placeholder="验 证 码" name="code">
+			<img src="index.php?m=index&f=login&a=code" alt="验证码" title="点击更换" class="code" onclick="this.src='index.php?m=index&f=login&a=code&'+Math.random()">
+		</div>
+		<input type="submit" class="btn btn-default" id="dlbtn" value="注册">
+		<p>已经有账号？请<a href="index.php?m=index&f=login&a=startLogin" class="reg">登录</a></p>
+	</form>
+</div>		
+</body>
+</html>

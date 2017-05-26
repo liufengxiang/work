@@ -1,0 +1,87 @@
+{include file="index/header.html"}
+<!--main-->
+<div class="mainbox">
+    <div class="main">
+        <ul>
+            <li class="fenleimain">分类</li>
+            {foreach $flresult as $v}
+            <li><a href="index.php?f=lists&cid={$v['cid']}">{$v['cname']}</a></li>
+            {/foreach}
+        </ul>
+    </div>
+</div>
+<!--main end-->
+    <!--banner-->
+    <div class="bannerbox">
+        <div class="banner">
+            <ul class="imgbox">
+                <li style="left: 0;"><a href="" style="background-image: url({IMG_PATH}/banner1.jpg);"></a></li>
+                <li><a href="" style="background-image: url({IMG_PATH}/banner2.jpg);"></a></li>
+                <li><a href="" style="background-image: url({IMG_PATH}/banner3.jpg);"></a></li>
+            </ul>
+            <ul class="tiaobox">
+                <li style="display: block">服装鞋帽</li>
+                <li>生活闲置</li>
+                <li>阅读精品</li>
+            </ul>
+            <ul class="btnbox">
+                <li style="background: #333"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <!--banner end-->
+    <!--show-->
+    <div class="showbox">
+        <div class="show">
+            <div class="showtit">
+                <div class="showtit-text">热门商品</div>
+                <div class="tittiao"></div>
+                <div class="tittiao"></div>
+                <div class="tittiao"></div>
+            </div>
+            <div class="showcon">
+                <ul>
+                    {foreach $hotresult as $v}
+                    <li>
+                        <a href="index.php?f=show&wid={$v['wid']}">
+                            <div class="showimg" style="background-image: url({if $v['wimg1']}{$v['wimg1']}{else}{IMG_PATH}/imgbg.jpg{/if})"></div>
+                            <div class="showmess">
+                                <p class="showmess-name">{$v['wname']}</p>
+                                <div class="showmess-jiage">￥{$v['wmuch']}</div>
+                            </div>
+                        </a>
+                    </li>
+                    {/foreach}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="showbox">
+        <div class="show">
+            <div class="showtit">
+                <div class="showtit-text">最新发布</div>
+                <div class="tittiao"></div>
+                <div class="tittiao"></div>
+                <div class="tittiao"></div>
+            </div>
+            <div class="showcon">
+                <ul>
+                    {foreach $newresult as $v}
+                    <li>
+                        <a href="index.php?f=show&wid={$v['wid']}">
+                            <div class="showimg" style="background-image: url({if $v['wimg1']}{$v['wimg1']}{else}{IMG_PATH}/imgbg.jpg{/if})"></div>
+                            <div class="showmess">
+                                <p class="showmess-name">{$v['wname']}</p>
+                                <div class="showmess-jiage">￥{$v['wmuch']}</div>
+                            </div>
+                        </a>
+                    </li>
+                    {/foreach}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--show end-->
+{include file="index/footer.html"}

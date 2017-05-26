@@ -1,0 +1,134 @@
+{include file="index/header.html"}
+<style>
+	#zyh_submit{
+		width:100%;
+		height:100%;
+		border:0;
+		background: transparent;
+		cursor: pointer;
+	}
+</style>
+		<link rel="stylesheet" type="text/css" href="{INDEX_PATH}/css/list2.css"/>
+		<script src="{INDEX_PATH}/js/list2.js"></script>		
+		<!--jplist页面 最外 盒子-->
+		<div class="zmr_jplist">
+			<!--搜索框-->
+			<form action="index.php?m=index&f=art&a=showlistc" method="post">
+				<div class="zmr_sousuo">
+					<div class="zmr_sousuo_inp"><input type="text" id="zmr_sousuo" name="zmr_sousuo" value="" placeholder="请输入您想搜索的课程名称" /></div>
+					<div class="zmr_sousuo_bg"><input type="submit" id="zyh_submit" value=""></div>
+				</div>
+			</form>
+			
+			<!--floor01-->
+			<div class="zmr_floor">
+				<div class="zmr_floor_t"></div>
+				<div class="zmr_floor_list" >
+					<!--6个盒子开始-->
+					{$i=0}
+					{foreach $course1 as $v}
+					<div class="zmr_floor_list_s {$i++} {if $i%3==2}zmr_floor_list_lr{/if}">
+						<!--移入效果开始-->
+						<a href="index.php?m=index&f=art&a=showlistc&coid={$v['coid']}">
+							<div>课程名称：{$v["title"]}</div>
+							<div>主讲人：{$v["teacher"]}</div>
+							<div>职称：{$v["tzhicheng"]}</div>
+							<div></div>
+							<div>{$v["summary"]}</div>
+							<div></div>
+							<div>详细信息</div>
+						</a>
+						<!--移入效果结束-->
+						<div class="zmr_floor_list_simg">
+							<img src="{$v['cimgurl']}" alt="" />
+						</div>
+						<div class="zmr_floor_list_sd zmr_hyin">课程名称：{$v["title"]}</div>
+						<div class="zmr_floor_list_zi zmr_hyin">
+							<div class="zmr_floor_list_zi_t">
+								<ul>
+									<li><span>主讲人：</span>{$v["teacher"]}</li>
+									<li><span>职称：</span>{$v["tzhicheng"]}</li>
+								</ul>
+							</div>
+							<div class="zmr_floor_list_zi_b">{$v["summary"]}</div>
+						</div>
+						<div class="zmr_floor_list_jiao"></div>
+					</div>
+					{/foreach}
+					<!--第二个-->
+					<!--6个盒子结束-->
+				</div>
+				<div class="zmr_more"><a href="index.php?m=index&f=art&a=searchCourseIndex">MORE</a></div>
+			</div>
+			<!--floor02-->
+            <div class="zmr_floor">
+				<div class="zmr_floor_t zmr_floor_t02"></div>
+				<div class="zmr_floor_list">
+					<!--6个盒子开始-->
+
+					{$j=0}
+					{foreach $course2 as $v}
+
+					<div class="zmr_floor_list_s {$j++} {if $j%3==2}zmr_floor_list_lr{/if}">
+						<!--移入效果开始-->
+						<a href="index.php?m=index&f=art&a=showlistc&coid={$v['coid']}">
+							<div>课程名称：{$v["title"]}</div>
+							<div>主讲人：{$v["teacher"]}</div>
+							<div>职称：{$v["tzhicheng"]}</div>
+							<div></div>
+							<div>{$v["summary"]}</div>
+							<div></div>
+							<div>详细信息</div>
+						</a>
+						<!--移入效果结束-->
+						<div class="zmr_floor_list_simg">
+							<img src="{$v['cimgurl']}" alt="" />
+						</div>
+						<div class="zmr_floor_list_sd zmr_hyin">课程名称：{$v["title"]}</div>
+						<div class="zmr_floor_list_zi zmr_hyin">
+							<div class="zmr_floor_list_zi_t">
+								<ul>
+									<li><span>主讲人：</span>{$v["teacher"]}</li>
+									<li><span>职称：</span>{$v["tzhicheng"]}</li>
+								</ul>
+							</div>
+							<div class="zmr_floor_list_zi_b">{$v["summary"]}</div>
+						</div>
+						<div class="zmr_floor_list_jiao"></div>
+					</div>
+					{/foreach}
+					<!--<div class="zmr_floor_list_s ">
+						&lt;!&ndash;移入效果开始&ndash;&gt;
+						<a href="">
+							<div>课程名称：计算机工程</div>
+							<div>主讲人：王老师</div>
+							<div>职称：特级教师</div>
+							<div></div>
+							<div>此门课程的稍微详细一些的文字介绍，内容大约控制在一两段文字。</div>
+							<div>此门课程的稍微详细一些的文字介绍，内容大约控制在一两段文字。此门课程的稍微详细一些的文字介绍，内容大约控制在一两段文字。</div>
+							<div>查看详情</div>
+							<div></div>
+						</a>
+						&lt;!&ndash;移入效果结束&ndash;&gt;
+						<div class="zmr_floor_list_simg">
+							<img src="{INDEX_PATH}/images/list2/校企合作 共赢未来.png" alt="" />
+						</div>
+						<div class="zmr_floor_list_sd zmr_hyin">课程名称：计算机工程</div>
+						<div class="zmr_floor_list_zi zmr_hyin">
+							<div class="zmr_floor_list_zi_t">
+								<ul>
+									<li><span>主讲人：</span>王老师</li>
+									<li><span>职称：</span>特级教师</li>
+								</ul>
+							</div>
+							<div class="zmr_floor_list_zi_b">此门课程的简单内容介绍，不宜过长，最多两行最多两行</div>
+						</div>
+						<div class="zmr_floor_list_jiao"></div>
+					</div>-->
+					<!--6个盒子结束-->
+				</div>
+				<div class="zmr_more"><a href="index.php?m=index&f=art&a=searchCourseIndex">MORE</a></div>
+			</div>
+		</div>
+		
+{include file="index/footer.html"}	

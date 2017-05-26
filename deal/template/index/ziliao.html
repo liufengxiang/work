@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="{CSS_PATH}/ziliao.css">
+<script src="{JS_PATH}/jquery-min.js"></script>
+<script src="{JS_PATH}/upload.js"></script>
+<body>
+<div class="box">
+    <form action="index.php?f=geren&a=ziliaoInfo" method="post">
+        <div class="sbox">账号：<input type="text" disabled value="{$ziliaoresult[0]['uname']}"></div>
+        <div class="sbox">密码：<input type="password" id="upass" value="{$ziliaoresult[0]['upass']}"><a class="editpass">点击修改密码</a></div>
+        <div class="sbox">昵称：<input type="text" name="nichen" value="{$ziliaoresult[0]['nichen']}"></div>
+        <div class="sbox">联系电话：<input type="text" name="uphone" value="{$ziliaoresult[0]['uphone']}"></div>
+        <div class="sbox">QQ号码：<input type="text" name="uqq" value="{$ziliaoresult[0]['uqq']}"></div>
+        <div class="sbox">
+            <input type="file" name="uimg1" id="uimg1"><br>
+            <input type="hidden" name="uimg" id="uimg" value="{$ziliaoresult[0]['uimg']}">
+            <input type="hidden" name="uid" value="{$ziliaoresult[0]['uid']}">
+        </div>
+        <div class="img img1" style="background-image: url({$ziliaoresult[0]['uimg']})"></div>
+        <div class="sbox"><input type="submit" id="tijiao" value="提交修改"><a href="index.php?f=geren" id="tijiao fanhui">返回个人中心</a></div>
+    </form>
+</div>
+</body>
+</html>
+<script>
+    var up1=new upload("index.php?a=addimg","#uimg1",function (text) {
+        $(".img1").css("background-image","url("+text+")");
+        $("#uimg").val(text);
+    })
+    up1.upload();
+    $(".editpass").click(function () {
+        var val=$("#upass").val();
+        if(confirm("确认修改吗？")){
+            location.href="index.php?f=geren&a=editpass&upass="+val;
+        }
+    })
+</script>

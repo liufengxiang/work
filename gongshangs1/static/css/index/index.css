@@ -1,0 +1,23 @@
+.dxj_sctx{
+	width: 200px;height: 200px;box-shadow: 0 0 10px #000;position:absolute ;left: 0;top:0;right:0;bottom: 0;margin: auto;
+    display: none;
+ }
+
+.dxj_sctx .box{
+    height:100px;
+    width:100px;
+    border:1px solid #000;
+}
+.dxj_sctx .img{
+    height:90px;
+    width:100%;
+}
+.dxj_sctx img{
+    height:100%;
+    width:100%;
+}
+.dxj_sctx .img_progress{
+    height:10px;
+    width:0;
+    background:#333333;
+}

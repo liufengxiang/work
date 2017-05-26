@@ -1,0 +1,63 @@
+
+.zyh_zjrzp .zyh_imgs,.zyh_imgs2{
+    height:160px;
+    width:160px;
+    border:1px solid #ccc;
+    margin-top:0;
+    position: relative;
+    overflow: hidden;
+}
+.zyh_zjrzp .zyh_jindu,.zyh_jindu2{
+    width:100%;
+    height:30px;
+    position: absolute;
+    bottom:0;
+    left:0;
+}
+.zyh_zjrzp .zyh_jindu>div,.zyh_jindu2>div{
+    width:0%;
+    height:100%;
+    background: #000;
+    text-align: center;
+    line-height: 30px;
+    opacity: 0.6;
+    font-size: 16px;
+    color:yellow;
+}
+.zyh_zjrzp .zyh_img,.zyh_img2{
+    width:100%;
+    height: 100%;
+}
+
+.zyh_zjrzp .zyh_file,.zyh_file2 {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+}
+.zyh_zjrzp .zyh_file input,.zyh_file2 input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.zyh_zjrzp .zyh_file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+.zyh_file2:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}

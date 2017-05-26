@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{CSS_PATH}/public.css" />
+		<link rel="stylesheet" href="{INDEX_PATH}/css/list.css">	
+		<link rel="stylesheet" href="{INDEX_PATH}/css/fonts/iconfont.css" />	
+		<script src="{JS_PATH}/jquery-min.js"></script>		
+		<script src="{INDEX_PATH}/js/list.js"></script>
+	</head>
+	<body>
+		<div class="right">
+			<p class="nav">
+
+				<a href="index.php" target="_top">
+					<span class="round"></span>
+					首&nbsp;&nbsp;页
+				</a>
+				<span class="jiantou iconfont icon-dayu-gengduo"></span>
+				<a href="">
+					<span class="round bgcolor"></span>
+					院系动态
+				</a>
+			</p>
+			<div class="listbox">
+				<h1 class="list_top">列表内容/Directories</h1>
+				<ul class="list_bottom">
+
+					{if isset($noticelist)}
+						{foreach $noticelist as $v}
+						<div class="box">
+							<div class="boxsmall">
+								<span class="sanjiao"></span>
+							</div>
+							<li >
+								<a href="index.php?m=index&f=art&a=showartnotice&nid={$v['nid']}">{$v["ntitle"]}</a><span>{substr($v['ntime'],0,10)}</span>
+							</li>
+						</div>
+						{/foreach}
+					{elseif isset($catlist)}
+						{foreach $catlist as $v}
+						<div class="box">
+							<div class="boxsmall">
+								<span class="sanjiao"></span>
+							</div>
+							<li >
+								<a href="index.php?m=index&f=art&a=showartn_son&nid={$v['nid']}">{$v["title"]}</a><span>{substr($v['ntime'],0,10)}</span>
+							</li>
+						</div>
+						{/foreach}
+					{elseif isset($courselist)}
+						{foreach $courselist as $v}
+						<div class="box">
+							<div class="boxsmall">
+								<span class="sanjiao"></span>
+							</div>
+							<li >
+								<a target="_top" href="index.php?m=index&f=art&a=showlistc&coid={$v['coid']}">{$v["title"]}</a><span>{substr($v['ntime'],0,10)}</span>
+							</li>
+						</div>
+						{/foreach}
+					{/if}
+
+				</ul>
+			</div>
+			<div class="page_nav">
+				<div class="wrap">
+					<ul>
+						{$pages}
+					<!--	<li><a class="add iconfont icon-xia" href=""></a></li>
+						<li><a href="">1</a></li>
+						<li><a href="">2</a></li>
+						<li><a href="">3</a></li>
+						<li><a class="active" href="">4</a></li>
+						<li><a href="">5</a></li>
+						<li><a class="remove" href="">......</a></li>
+						<li><a href="">10</a></li>
+						<li><a href="">11</a></li>
+						<li><a class="add iconfont icon-you" href=""></a></li>-->
+						<li><span>跳转到</span><span class="pages"><input type="text" ></span><span>页</span></li>
+						<li><a  href="javascript:;" class="zyh_GO">Go</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+			
+	</body>
+	<script>
+        $(function(){
+            // 页码样式添加
+            var yeshu;
+            function pages(){
+                var fbox=$(".wrap ul");
+                yeshu=$(".wrap ul>span:nth-child(2)").html();
+                $(".wrap ul>span").remove();
+                $(".wrap ul>#home").remove();
+                $(".wrap ul>#last").remove();
+                if(fbox.find("a").length<=4){
+                    fbox.css("display","none");
+                    return false;
+                }
+                fbox.find("a").wrap("<li></li>");
+                fbox.find("#up").html("").addClass("add iconfont icon-xia");
+                fbox.find("#next").html("").addClass("add iconfont icon-you");
+            }
+            pages();
+            $(".zyh_GO").click(function(){
+                if($.trim($(".pages input").val())==""){
+                    //请输入要跳转的页数
+                    $('#iframe', parent.document).parent().parent().siblings(".zyh_bothbj").css("display","block");
+                    $('#iframe', parent.document).parent().parent().siblings(".zyh_bothtishik").css("display","block");
+                    $('#iframe', parent.document).parent().parent().siblings(".zyh_bothtishik").find("h1").html("请输入要跳转的页数");
+                    return;
+                }
+                var pag=$(".pages input").val()-1;
+                if(yeshu<pag+1){
+                    $('#iframe', parent.document).parent().parent().siblings(".zyh_bothbj").css("display","block");
+                    $('#iframe', parent.document).parent().parent().siblings(".zyh_bothtishik").css("display","block");
+                    $('#iframe', parent.document).parent().parent().siblings(".zyh_bothtishik").find("h1").html("没有这么多分页");
+                    return;
+                }
+                var hre=$(".wrap ul li:first-child").find("a").attr("href");
+                var newhre=hre.slice(0,-7);
+                $(".zyh_GO").attr("href",newhre+"pages="+pag);
+            })
+            //通用提示确定按钮
+            $('#iframe', parent.document).parent().parent().siblings(".zyh_bothtishik").find(".zyh_bothqueding").click(function(){
+                $(this).parent(".zyh_bothtishik").prev().css("display","none");
+                $(this).parent(".zyh_bothtishik").css("display","none");
+                $(this).prev().html("");
+            })
+        })
+	</script>
+</html>

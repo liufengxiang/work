@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="{CSS_PATH}/index/login.css">
+    <script src="{JS_PATH}/jquery-min.js"></script>
+    <script src="{JS_PATH}/jquery.validate.js"></script>
+    <script src="{JS_PATH}/login.js"></script>
+</head>
+<body>
+<div class="lktop">
+	<a href="{FILE_URL}"><img src="{INDEX_PATH}/images/logo1.png" title="返回首页" alt=""></a>
+</div>
+<div class="bigbox">
+	<form action="index.php?m=index&f=login&a=onLogin" method="post" id="form">
+		<div class="lable">
+		<input type="text" placeholder="请输入您的账号" id="username" name="username" autocomplete="off">
+		</div>
+		<div class="lable">
+		<input type="password" placeholder="请输入密码" id="Password1" name="password" autocomplete="off">
+		</div>
+		<div class="yanzheng lable">
+		  <input type="text" id="code" placeholder="验 证 码" name="code">
+		  <img src="index.php?m=index&f=login&a=code" alt="验证码" title="点击更换" class="code"
+			 onclick="this.src='index.php?m=index&f=login&a=code&'+Math.random()">
+		</div>
+		<input type="submit" id="dlbtn" value="登录">
+		<p>还没有学院账号？请点击<a href="index.php?m=index&f=login&a=reg" class="reg">立即注册</a></p>
+	</form>
+</div>
+</body>
+</html>

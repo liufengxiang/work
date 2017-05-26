@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="{CSS_PATH}/default.css">
+    <link rel="stylesheet" href="{CSS_PATH}/login.css">
+    <script src="{JS_PATH}/jquery-min.js"></script>
+    <script src="{JS_PATH}/jquery.validate.js"></script>
+</head>
+<body>
+<div class="top">
+    <a href="{FILE_URL}">IDLE</a>
+    <i>让您的物品使用起来</i>
+</div>
+<div class="bigbox">
+    <form action="index.php?m=index&f=login&a=onLogin" method="post" id="form">
+        <div class="lable">
+            <input type="text" placeholder="请输入您的账号" name="user" autocomplete="off">
+        </div>
+        <div class="lable">
+            <input type="password" placeholder="请输入密码" name="pass" autocomplete="off">
+        </div>
+        <div class="yanzheng lable">
+            <input type="text" id="code" placeholder="验 证 码" name="code">
+            <img src="index.php?m=index&f=login&a=code" alt="验证码" title="点击更换" class="code"
+                 onclick="this.src='index.php?m=index&f=login&a=code&'+Math.random()">
+        </div>
+        <input type="submit" id="dlbtn" value="登录">
+        <p>还没有学院账号？请点击<a href="index.php?m=index&f=login&a=reg" class="reg">立即注册</a></p>
+    </form>
+</div>
+</body>
+</html>

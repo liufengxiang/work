@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理物品</title>
+</head>
+<link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css" />
+<link rel="stylesheet" href="{CSS_PATH}/tablebox.css" />
+<script src="{JS_PATH}/jquery-min.js"></script>
+<body>
+    <div class="box">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>物品名称</th>
+                <th>物品分类</th>
+                <th>物品价格</th>
+                <th>物品所有人</th>
+                <th>当前状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {foreach $result as $v}
+            <tr>
+                <td>{$v["wname"]}</td>
+                <td>{$v["cid"]}</td>
+                <td>{$v["wmuch"]}</td>
+                <td>{$v["uid"]}</td>
+                <td>{$v["wstate"]}</td>
+                <td id="{$v['wid']}"><a href="index.php?m=admin&f=cate&a=shenshow&wid={$v['wid']}">审核</a><a class='del'>删除</a></td>
+            </tr>
+            {/foreach}
+            </tbody>
+        </table>
+        <div style="text-align: center;">{$page}</div>
+    </div>
+</body>
+</html>
+<script>
+    $(".del").click(function () {
+        if(confirm("确定删除吗？")){
+            location.href="index.php?m=admin&f=cate&a=delshow&wid="+$(this).parent().attr("id");
+        }
+    });
+</script>

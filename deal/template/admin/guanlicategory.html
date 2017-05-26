@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理分类</title>
+</head>
+<link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css" />
+<link rel="stylesheet" href="{CSS_PATH}/tablebox.css" />
+<script src="{JS_PATH}/jquery-min.js"></script>
+<body>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>pid</th>
+            <th>分类名称</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+    {$result}
+    </tbody>
+</table>
+</body>
+</html>
+<script>
+    $(".del").click(function () {
+        for(var i=0;i<$(".del").length;i++){
+            console.log($(".del"))
+        }
+        if(confirm("确定删除分类吗？")){
+            location.href="index.php?m=admin&f=cate&a=delcategory&cid="+$(this).parent().attr("id");
+        }
+    });
+</script>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>大学生二手交易系统后台</title>
+</head>
+<style>
+    @font-face {
+        font-family: 'iconfont';
+        src: url('{FONT_PATH}/admin/iconfont.eot');
+        src: url('{FONT_PATH}/admin/iconfont.eot?#iefix') format('embedded-opentype'),
+        url('{FONT_PATH}/admin/iconfont.woff') format('woff'),
+        url('{FONT_PATH}/admin/iconfont.ttf') format('truetype'),
+        url('{FONT_PATH}/admin/iconfont.svg#iconfont') format('svg');
+    }
+</style>
+<link rel="stylesheet" href="{CSS_PATH}/default.css">
+<link rel="stylesheet" href="{CSS_PATH}/admin.css">
+<script src="{JS_PATH}/jquery-min.js"></script>
+<script src="{JS_PATH}/admin.js"></script>
+<body>
+    <!--top-->
+    <div class="topbox">
+        <div class="top">
+            <div class="topleft">
+                <b>大学生二手交易平台后台</b>
+            </div>
+            <div class="topright">
+                <a class="returnindex" href="index.php">进入前台</a>
+                <span><i class="iconfont">&#xe6c5;</i>您好！{$name},欢迎您登录</span>
+                <a href="index.php?m=admin&a=exitadmin"><i class="iconfont">&#xe63b;</i></a>
+            </div>
+        </div>
+    </div>
+    <!--top end-->
+    <!--main-->
+    <div class="mainbox">
+        <div class="main">
+            <div class="center">
+                <ul class="fu">
+                    <li>
+                        <i class="iconfont">&#xe729;</i>
+                        <a href="javascript:;"><i class="iconfont">&#xe62d;</i>admin</a>
+                        <ul class="son">
+                            <li><a href="index.php?m=admin&f=cate&a=xiugaiapass" target="right"><i class="iconfont">&#xe724;</i>修改密码</a></li>
+                            {if $atype==1}
+                            <li><a href="index.php?m=admin&f=cate&a=guanliadmin" target="right"><i class="iconfont">&#xe724;</i>所有管理员</a></li>
+                            {else}{/if}
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="iconfont">&#xe612;</i>
+                        <a href="index.php?m=admin&f=cate&a=guanliuser" target="right"><i class="iconfont">&#xe69b;</i>用户管理</a>
+                    </li>
+                    <li>
+                        <i class="iconfont">&#xe729;</i>
+                        <a href="javascript:;"><i class="iconfont">&#xe661;</i>分类管理</a>
+                        <ul class="son">
+                            <li><a href="index.php?m=admin&f=cate&a=addcategory" target="right"><i class="iconfont">&#xe724;</i>添加分类</a></li>
+                            <li><a href="index.php?m=admin&f=cate&a=guanlicategory" target="right"><i class="iconfont">&#xe724;</i>管理分类</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="iconfont">&#xe729;</i>
+                        <a href="javascript:;"><i class="iconfont">&#xe63c;</i>二手物品管理</a>
+                        <ul class="son">
+                            <li><a href="index.php?m=admin&f=cate&a=addshow" target="right"><i class="iconfont">&#xe724;</i>添加二手物品</a></li>
+                            <li><a href="index.php?m=admin&f=cate&a=guanlishow" target="right"><i class="iconfont">&#xe724;</i>管理二手物品</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="iconfont">&#xe612;</i>
+                        <a href="index.php?m=admin&f=cate&a=guanlidingdan" target="right"><i class="iconfont">&#xe60b;</i>订单管理</a>
+                    </li>
+                    <li>
+                        <i class="iconfont">&#xe612;</i>
+                        <a href="index.php?m=admin&f=cate&a=guanlipinlun" target="right"><i class="iconfont">&#xe717;</i>留言评论管理</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="show">
+            <iframe src="" frameborder="0" name="right"></iframe>
+        </div>
+    </div>
+    <!--main end-->
+</body>
+</html>

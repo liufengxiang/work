@@ -1,0 +1,112 @@
+{include file="index/header.html"}	
+	<link rel="stylesheet" href="{INDEX_PATH}/css/default.css">
+	<link rel="stylesheet" href="{INDEX_PATH}/css/list.css">
+	<script src="{INDEX_PATH}/js/list.js"></script>
+<!--包中间内容的盒子  start-->
+<div class="cyy-contentbox">
+
+	<!--左边的盒子  start-->
+	<div class="cyy-leftbox">
+		<!--精品课程讲师 start-->
+		<div class="catlist">
+			<div class="caption no_btm_border">
+				<p>课程负责人</p>
+				<div>
+					<span></span>
+					Course Director
+					<span></span>
+				</div>
+			</div>
+			<div class="teacher">
+				<div class="imgbox">
+					{if isset($colist)}
+					<img src="{$colist['timgurl']}" alt="">
+					{/if}
+				</div>
+				<h5><b>主讲人：</b>{if isset($colist)}{$colist["teacher"]}{/if}</h5>
+				<h5><b>职称：</b>{if isset($colist)}{$colist["tzhicheng"]}{/if}</h5>
+			</div>
+		</div>
+		<!--精品课程讲师 end-->		
+		<dl class="catlist">
+			<dt class="caption">
+				<p>最新课程</p>
+				<div>
+					<span></span>
+					Site Navigation
+					<span></span>
+				</div>
+			</dt>
+			{foreach $newlist as $v }
+			<dd class="catname">
+				<a href="index.php?m=index&f=art&a=showartc&coid={$v['coid']}" {if isset($coid)}{if $v['coid']==$coid}class="now"{/if}{/if} target="con_right">
+					<b></b>
+					{$v["title"]}
+					<i class="now">&gt;</i>
+				</a>
+			</dd>
+			{/foreach}
+		</dl>
+		<!--文字列表导航 end-->
+		<input type="hidden" class="coid" {if isset($colist)}value={$coid}{/if}>
+		<!--搜索框 start-->
+
+		<!--从list2搜索框进入-->
+		<input type="hidden" class="search_info" name="search_info" {if !empty($search_info)}value="{$search_info}"{/if}>
+
+		<div class="searchbox">
+			<!--<form >-->
+				<input type="text" class="search" name="search" />
+				<input type="submit" class="search-btn" value=""/>
+			<!--</form>-->
+		</div>
+		<!--搜索框 start-->
+	</div>
+	<!--左边的盒子  end-->
+	<!--右边的盒子  start-->
+	<div class="cyy-rightbox">
+		<iframe src="" frameborder="0" name="con_right" id="iframe" scrolling="no" frameborder="0">
+		</iframe>
+	</div>
+	<!--右边的盒子  end-->
+</div>
+<!--包中间内容的盒子  end-->
+{include file="index/loginPrompt.html"}
+{include file="index/bothTishi.html"}
+<script>
+
+	// 一进入本页面跳转iframe
+    function showfunction(){
+        var iframe=$("#iframe");
+        if(!$(".coid").eq(0).val()){
+            // 如果没有传入coid那么进入列表页
+            var src="index.php?m=index&f=art&a=showCourseList";
+		}else{
+            // 如果传入coid进入详情页
+            var src="index.php?m=index&f=art&a=showartc&coid="+$(".coid").eq(0).val();
+		}
+
+            iframe.get(0).src=src;
+    }
+    showfunction();
+
+    function search(){
+        var iframe=$("#iframe");
+
+        if($(".search_info").eq(0).val()){
+            iframe.get(0).src="index.php?m=index&f=art&a=searchCourse&search="+$(".search_info").eq(0).val();
+		}
+
+
+        $(".searchbox .search-btn").eq(0).click(function(){
+            var search=$(".searchbox .search").eq(0).val();
+
+            var url="index.php?m=index&f=art&a=searchCourse&search="+search;
+
+            iframe.get(0).src=url;
+
+        });
+    }
+    search();
+</script>
+{include file="index/footer.html"}	

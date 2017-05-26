@@ -1,0 +1,96 @@
+{include file="index/header.html"}
+<link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css">
+<link rel="stylesheet" href="{CSS_PATH}/lists.css">
+<script src="{JS_PATH}/lists.js"></script>
+<h2>{$result[0]['stitle']}</h2>
+<p class="ertitle">
+    <b>发布人：<span>{$result[0]['sname']}</span></b>
+    <em>发布时间：<span>{$result[0]['stime']}</span></em>
+</p>
+<div class="content">
+    {$result[0]['scon']}
+</div>
+<div class="chuli">
+    <!--是否关注-->
+    {if empty($self)||$self=="no"}
+    <button type="button" uname2="{$result[0]['sname']}" class="btn btn-success guanzhu">关注</button>
+    <button type="button" style="display: none" class="btn btn-success quxiaoguanzhu">取消关注</button>
+    {elseif $self=="yes"}
+    <button type="button" style="display: none" uname2="{$result[0]['sname']}" class="btn btn-success guanzhu">关注</button>
+    <button type="button" class="btn btn-success quxiaoguanzhu">取消关注</button>
+    {else}{/if}
+    <!--是否收藏-->
+    {if empty($love)||$love=="no"}
+    <button type="button" loveshow="{$result[0]['id']}" class="btn btn-info shoucang">收藏</button>
+    <button type="button" style="display: none" class="btn btn-info quxiaoshoucang">取消收藏</button>
+    {elseif $love=="yes"}
+    <button type="button" style="display: none" loveshow="{$result[0]['id']}" class="btn btn-info shoucang">收藏</button>
+    <button type="button" class="btn btn-info quxiaoshoucang">取消收藏</button>
+    {else}{/if}
+    <!--点赞-->
+    {if empty($zan)||$zan=="no"}
+    <button type="button" style="background: #999" class="btn btn-danger dianzan">点赞 <span>{$zanshu}</span>人</button>
+    <button type="button" style="display: none" class="btn btn-danger quxiaodianzan">点赞 <span>{$zanshu}</span>人</button>
+    {else}
+    <button type="button" style="background: #999;display: none" class="btn btn-danger dianzan">点赞 <span>{$zanshu}</span>人</button>
+    <button type="button" class="btn btn-danger quxiaodianzan">点赞 <span>{$zanshu}</span>人</button>
+    {/if}
+
+    <div class="form-group">
+        <label for="name"></label>
+        <textarea class="form-control liuyancon" rows="3" style="resize: none" ></textarea>
+    </div>
+    <button type="button" uname1="{$se}" uname2="{$result[0]['sname']}" cid="{$result[0]['id']}"  class="btn btn-warning liuyanbtn">留言</button>
+    <button type="button" class="btn btn-danger quxiaoliuyan">取消</button>
+    <div class="liuyanbox">
+        <h3>一共有 <span>{count($lyresult)}</span>条留言</h3>
+        <!--原版留言-->
+        <div class="liuyan" style="display: none" >
+            <div class="lymessage">
+                <div class="touxiang"></div>
+                <a href="">XXX</a>
+                <span>2000-10-10</span>
+            </div>
+            <div class="lycon">你说话真有意思</div>
+
+            <!--儿子-->
+            <div class="lyson" style="display: none">
+                <p><a href="">XXX</a><span>你可说</span></p>
+                <span>2011-1-1</span><span class="btn btn-default huifu1">回复</span>
+                <textarea class="form-control huifu2con" rows="3"  ></textarea>
+            </div>
+        </div>
+        <!--原版留言结束-->
+        <div class="liuyanqu"></div>
+
+
+
+
+        {foreach $lyresult $v}
+        <div class="liuyan" pid="{$v['id']}">
+            <div class="lymessage">
+                <div class="touxiang" style="background-image: url({$v['uimg']})"></div>
+                <a href="">{$v['uname1']}</a>
+                <span>{$v['utime']}</span>
+            </div>
+            <div class="lycon">{$v['mcon']}</div>
+            <button type="button" class="btn btn-default huifu1">回复</button>
+            <button type="button" style="display: none" class="btn btn-default tijiao1">提交</button>
+            <textarea class="form-control huifu1con" rows="3"  ></textarea>
+            {foreach $v['son'] $k}
+            <div class="lyson">
+                <p><a href="">{$k['uname1']}</a>:<span>{$k['mcon']}</span></p>
+                <span>{$k['utime']}</span><span class="btn btn-default huifu1">回复</span>
+                <textarea class="form-control huifu2con" rows="3"  ></textarea>
+            </div>
+            {/foreach}
+        </div>
+        {/foreach}
+    </div>
+</div>
+{include file="index/notice.html"}
+<div class="czcgbox">
+    <div class="czcg">操作成功</div>
+</div>
+</body>
+</html>

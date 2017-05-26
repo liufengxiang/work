@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>我的博客</title>
+</head>
+<link rel="stylesheet" href="{CSS_PATH}/header.css">
+<style>
+    .logo{
+        float: left;
+        font-size: 34px;
+        color:#fff;
+        font-family: "Comic Sans MS", cursive;
+    }
+    .topright{
+        float: right;
+    }
+    .topright>li{
+        float: left;
+        color: #fff;
+        margin: 0 10px;
+    }
+    .topright>li>a{
+        color: #fff;
+        padding:8px 20px;
+        transition: all .5s;
+        border-radius: 5px;
+        border: 1px solid transparent;
+    }
+    .topright>li>a:hover{
+        border: 1px solid #fff;
+    }
+    .topright>.setshow>a{
+        border: 1px solid #fff;
+        padding: 10px 25px;
+    }
+    .topright>.setshow>a:hover{
+        background: #333;
+        border: 1px solid transparent;
+    }
+</style>
+<script src="{JS_PATH}/jquery.js"></script>
+<body style="background: #31302E;">
+<div class="topbox">
+    <div class="top">
+        <a href="index.php" class="logo">+Blogs</a>
+        <ul class="topright">
+            {if $login!="yes"}
+            <li><a href="index.php?a=login">登录</a></li>
+            <li><a href="index.php?a=zhuce">注册</a></li>
+            {else}
+            <li>欢迎您！</li>
+            <li><a href="index.php?a=geren">{$se}</a></li>
+            <li><a href="index.php?a=exits">退出</a></li>
+            {/if}
+            <li class="setshow"><a href="index.php?a=setshow">写文章</a></li>
+        </ul>
+    </div>
+</div>

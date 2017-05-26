@@ -1,0 +1,121 @@
+.blogs{
+    width: 100%;
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    font-size: 60px;
+    color: #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+.bannerbox{
+    width: 1200px;
+    margin: 100px auto 0;
+    height: auto;
+    overflow: hidden;
+}
+.banner{
+    width: 770px;
+    height: 400px;
+    float: left;
+    margin-right: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+.img{
+    width: 770px;
+    height: 400px;
+    float: left;
+}
+.imgli{
+    width: 770px;
+    height: 400px;
+    position: absolute;
+    left:0;
+    top:0;
+}
+.fenleibox{
+    float: right;
+    width: 400px;
+    height: auto;
+    background: transparent;
+}
+.sousuo{
+    width: 350px;
+    height: 40px;
+    float: right;
+    transition: all .5s;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 30px;
+}
+.sousuo:hover{
+    border-color: #fff;
+}
+.sousuo>input{
+    background: transparent;
+    width: 280px;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    color: #fff;
+}
+.sousuo>span{
+    margin-left: 10px;
+    font-size: 20px;
+}
+.fenleibox{
+    width: 350px;
+    padding: 20px;
+    transition: all .5s;
+    border-radius: 5px;
+    float: right;
+    margin: 50px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+.fenleibox:hover{
+    border-color: #fff;
+}
+.fenleili{
+    line-height: 40px;
+    box-sizing: border-box;
+    padding-left: 30px;
+    transition: all .5s;
+    border-bottom: 1px dashed #ccc;
+}
+.fenleili:hover{
+    padding: 5px;
+    border-bottom-style: solid;
+}
+.titlebox{
+    display: none;
+    width: 770px;
+    float: left;
+    margin: 50px 0;
+    margin-left: 10px;
+}
+.title{
+    width: 100%;
+    height: 80px;
+    margin-top: 20px;
+    border-bottom: 1px dashed #ccc;
+    position: relative;
+}
+.title>a{
+    font-size: 20px;
+}
+.title>span{
+    position: absolute;
+    right: 0;
+    color: #ccc;
+    margin-right: 10px;
+}
+.title>h4{
+    font-weight: 400;
+    color: #ccc;
+}

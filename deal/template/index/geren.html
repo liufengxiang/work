@@ -1,0 +1,64 @@
+{include file="index/header.html"}
+<link rel="stylesheet" href="{CSS_PATH}/geren.css">
+<div class="box">
+    <div class="mybox">
+        <div class="img" style="background-image: url({$result['uimg']})"></div>
+        <a class="uname">{$result['nichen']}</a>
+        <div class="bianjiziliao"><a href="index.php?f=geren&a=ziliao&uid={$result['uid']}">编辑资料</a></div>
+    </div>
+    <div class="biaoti">
+        <div class="biaotili">
+            <span></span><br>
+            <a>我的购买</a>
+        </div>
+        <div class="biaotili">
+            <span></span><br>
+            <a>我的卖出</a>
+        </div>
+
+    </div>
+    <div class="neirong">
+        {if count($wresult1)==0}
+        <h4>暂无购买商品</h4>
+        {else}
+        {foreach $wresult1 as $v}
+        <div class="ddbox">
+            <div class="ddimg" style="background-image: url({$v['wimg1']});"></div>
+            <div class="ddtext">
+                <div class="ddname">
+                    {$v['wname']}
+                </div>
+                <div class="ddtime">发布时间：{$v['wtime']}</div>
+            </div>
+            <div class="ddjia">￥{$v['wmuch']}</div>
+            <div class="ddstate">订单状态<br>交易成功</div>
+        </div>
+        {/foreach}
+        {/if}
+    </div>
+    <div class="neirong" style="display: none">
+        {if count($wresult)==0}
+        <h4>暂无卖出商品</h4>
+        {else}
+        {foreach $wresult as $v}
+        <div class="ddbox">
+            <div class="ddimg" style="background-image: url({$v['wimg1']});"></div>
+            <div class="ddtext">
+                <div class="ddname">
+                    {$v['wname']}
+                </div>
+                <div class="ddtime">发布时间：{$v['wtime']}</div>
+            </div>
+            <div class="ddjia">￥{$v['wmuch']}</div>
+            <div class="ddstate">订单状态<br>{if $v['wstate']==0}待审核{elseif $v['wstate']==1}审核未通过{elseif $v['wstate']==2}未卖出{elseif $v['wstate']==3}已出售{else}{/if}</div>
+        </div>
+        {/foreach}
+        {/if}
+    </div>
+</div>
+{include file="index/footer.html"}
+<script>
+    $(".biaotili").click(function () {
+        $(".neirong").css("display","none").eq($(this).index()).css("display","block");
+    })
+</script>

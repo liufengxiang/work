@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布物品</title>
+</head>
+<link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css">
+<link rel="stylesheet" href="{CSS_PATH}/setshow.css">
+<script src="{JS_PATH}/jquery-min.js"></script>
+<script src="{JS_PATH}/upload.js"></script>
+<script src="{JS_PATH}/setshow.js"></script>
+<body style="background: transparent">
+<form action="index.php?m=admin&f=cate&a=shenshowend" method="post">
+    <div class="form-group">
+        <label for="wname">商品名称</label>
+        <input type="text" class="form-control" disabled value="{$result[0]['wname']}" name="wname" id="wname" placeholder="商品名称">
+    </div>
+    <div class="form-group">
+        <label for="wshow">商品描述</label>
+        <textarea class="form-control" name="wshow" disabled placeholder="请输入商品描述" resize="none" rows="5">{$result[0]['wshow']}</textarea>
+    </div>
+    <div class="form-group" style="overflow: hidden">
+        <label for="img" style="display: block">添加物品图片</label>
+        <input type="hidden" name="wwimg1" id="wwimg1">
+        <input type="hidden" name="wwimg2" id="wwimg2">
+        <input type="hidden" name="wwimg3" id="wwimg3">
+        <div class="img img1"  style="background-image: url({if $result[0]['wimg1']}{$result[0]['wimg1']}{else}{IMG_PATH}/imgbg.jpg{/if})"></div>
+        <div class="img img2" style="background-image: url({if $result[0]['wimg2']}{$result[0]['wimg2']}{else}{IMG_PATH}/imgbg.jpg{/if})"></div>
+        <div class="img img3" style="background-image: url({if $result[0]['wimg3']}{$result[0]['wimg3']}{else}{IMG_PATH}/imgbg.jpg{/if})"></div>
+    </div>
+    <div class="form-group">
+        <label for="price">商品价格</label>
+        <div class="input-group" style="width: 300px">
+            <div class="input-group-addon">￥</div>
+            <input type="number" class="form-control" disabled value="{$result[0]['wmuch']}" name="wmuch" id="wmuch" placeholder="price">
+            <div class="input-group-addon">.00</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="price">审核意见</label><br>
+        <input type="radio" name="wstate"  {if $result[0]['wstate']==0}checked{else}{/if} value="0">未审核
+        <input type="radio" name="wstate"  {if $result[0]['wstate']==1}checked{else}{/if} value="1">审核未通过
+        <input type="radio" name="wstate"  {if $result[0]['wstate']==2}checked{else}{/if} value="2">审核通过
+    </div>
+    <input type="hidden" name="wid" value="{$result[0]['wid']}">
+    <button class="btn btn-success">审核</button>
+</form>
+</body>
+</html>

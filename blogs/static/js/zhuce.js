@@ -1,0 +1,43 @@
+$(function(){
+	$("#form").validate({
+		rules:{
+			user:{
+				required:true,
+				minlength:5,
+				remote:{
+					url:"index.php?f=zhuce&a=usercf",
+					type:"post",
+					data:{user:function(){
+						return $(".user").val();
+					}},
+					dataType:"json"
+				}
+			},
+			pass:{
+				required:true,
+				minlength:5
+			},
+			pass2:{
+				required:true,
+				minlength:5,
+				equalTo:".pass"
+			}
+		},
+		messages:{
+			user:{
+				required:"必填！",
+				minlength:"不能小于5位",
+				remote:"名字重复"
+			},
+			pass:{
+				required:"必填！",
+				minlength:"不能小于5位"
+			},
+			pass2:{
+				required:"必填！",
+				minlength:"不能小于5位",
+				equalTo:"两次输入不一样"
+			}
+		}
+	})
+})

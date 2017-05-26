@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改精品课程</title>
+</head>
+<link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css">
+<script charset="utf-8" src="{JS_PATH}/kindeditor-4.1.7/kindeditor.js"></script>
+<script charset="utf-8" src="{JS_PATH}/kindeditor-4.1.7/lang/zh_CN.js"> </script>
+<script src="{JS_PATH}/jquery-min.js"></script>
+<script src="{JS_PATH}/jquery.validate.js"></script>
+<style>
+    .zyh_zjrzp .zyh_imgs,.zyh_imgs2{
+        height:160px;
+        width:160px;
+        border:1px solid #ccc;
+        margin-top:0;
+        position: relative;
+        overflow: hidden;
+    }
+    .zyh_zjrzp .zyh_jindu,.zyh_jindu2{
+        width:100%;
+        height:30px;
+        position: absolute;
+        bottom:0;
+        left:0;
+    }
+    .zyh_zjrzp .zyh_jindu>div,.zyh_jindu2>div{
+        width:0%;
+        height:100%;
+        background: #000;
+        text-align: center;
+        line-height: 30px;
+        opacity: 0.6;
+        font-size: 16px;
+        color:yellow;
+    }
+    .zyh_zjrzp .zyh_img,.zyh_img2{
+        width:100%;
+        height: 100%;
+    }
+
+    .zyh_zjrzp .zyh_file,.zyh_file2 {
+        position: relative;
+        display: inline-block;
+        background: #D0EEFF;
+        border: 1px solid #99D3F5;
+        border-radius: 4px;
+        padding: 4px 12px;
+        overflow: hidden;
+        color: #1E88C7;
+        text-decoration: none;
+        text-indent: 0;
+        line-height: 20px;
+    }
+    .zyh_zjrzp .zyh_file input,.zyh_file2 input {
+        position: absolute;
+        font-size: 100px;
+        right: 0;
+        top: 0;
+        opacity: 0;
+    }
+    .zyh_zjrzp .zyh_file:hover {
+        background: #AADFFD;
+        border-color: #78C3F3;
+        color: #004974;
+        text-decoration: none;
+    }
+    .zyh_file2:hover {
+        background: #AADFFD;
+        border-color: #78C3F3;
+        color: #004974;
+        text-decoration: none;
+    }
+</style>
+<body>
+<form action="index.php?m=admin&f=art&a=editcourseInfo" method="post" id="form" >
+    <div class="form-group">
+        <label for="title">课程名称：</label>
+        <input type="text" name="title" class="form-control" id="title" autocomplete="off" value={$course['title']} />
+    </div>
+    <div class="form-group">
+        <label for="etitle">课程英文名称：</label>
+        <input type="text" name="etitle" id="etitle" class="form-control" autocomplete="off" value="{$course['etitle']}">
+    </div>
+    <div class="form-group">
+        <label for="">课程首页推荐位：</label>
+        <label class="state">
+            <input type="radio" name="cposition" value="1" {if $course['cposition']==1} checked {/if} > 院级精品
+        </label>
+        <label class="state">
+            <input type="radio" name="cposition" value="2"{if $course['cposition']==2} checked {/if} > 校级精品
+        </label>
+        <label class="state">
+            <input type="radio" name="cposition" value="3"  checked {if $course['cposition']==3} checked {/if} > 其他
+        </label>
+    </div>
+    <div class="form-group">
+        <label for="name">发布人：</label>
+        <input type="text" name="name" id="name" class="form-control" autocomplete="off" value={$course['name']}>
+    </div>
+    <div class="form-group">
+        <label for="teacher">课程主讲人：</label>
+        <input type="text" name="teacher" class="form-control" id="teacher" autocomplete="off" value={$course['teacher']} >
+    </div>
+    <div class="form-group">
+        <label for="tzhicheng">课程主讲人职称：</label>
+        <input type="text" name="tzhicheng" class="form-control" id="tzhicheng" autocomplete="off" value={$course['tzhicheng']} >
+    </div>
+    <div class="form-group">
+        <label for="label">课程分类（标签）：</label>
+        <input type="text" name="label" id="label" class="form-control" autocomplete="off" value={$course['label']}>
+    </div>
+    <div class="form-group">
+        <label for="summary">课程摘要：</label>
+        <input type="text" class="form-control" name="summary" id="summary" value={$course['summary']}>
+    </div>
+    <div class="form-group">
+        <label for="editor_id">视频和内容：</label>
+        <textarea id="editor_id" name="editor_id" style="width:100%;height:300px;">
+            {$course['con']}
+        </textarea>
+    </div>
+
+    <!--上传主讲人照片 开始-->
+    <div class="zyh_zjrzp">
+        <a href="javascript:;" class="zyh_file">上传主讲人照片
+            <input type="file" name="file" class="zyh_files" />
+        </a>
+        <div class="zyh_imgs">
+            <img alt="" class="zyh_img" src="{$course['timgurl']}"/>
+            <div class="zyh_jindu">
+                <div class="zyh_progress"></div>
+            </div>
+        </div>
+    </div>
+    <!--隐藏域，保存上传之后图片的地址，当点提交的时候再往数据库中保存-->
+    <input type="hidden" value="{$course['timgurl']}" name="imgurl1" id="zyh_imgurl"/>
+    <!--上传主讲人照片 结束-->
+    <!--上传主课程照片 开始-->
+    <div class="zyh_kczp">
+        <a href="javascript:;" class="zyh_file2">上传课程照片
+            <input type="file" name="file2" class="zyh_files2" />
+        </a>
+        <div class="zyh_imgs2">
+            <img alt="" class="zyh_img2" src="{$course['cimgurl']}" />
+            <div class="zyh_jindu2">
+                <div class="zyh_progress2"></div>
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" value="{$course['cimgurl']}" name="imgurl2" id="zyh_imgurl2"/>
+    <!--上传主课程照片 结束-->
+
+    <input type="hidden" value="{$course['coid']}" name="coid">
+    <button id="fat-btn" class="btn btn-primary" data-loading-text="Loading..."
+            type="submit">提交
+    </button>
+</form>
+</body>
+<script src="{ADMIN_PATH}/js/upload.js"></script>
+<script>
+    window.onload=function(){
+
+        var obj1 = new upload("index.php?&m=admin&f=art&a=upload1", ".zyh_files", ".zyh_progress", ".zyh_img");
+        var imgurl = document.querySelector("#zyh_imgurl");
+        obj1.up(function (q) {
+            if (q) {
+                imgurl.value = q;
+            }
+        });
+
+        /*************上传主讲人头像  结束*****************/
+        /*************上传主课程图片  开始*****************/
+        var obj2 = new upload("index.php?&m=admin&f=art&a=upload1", ".zyh_files2", ".zyh_progress2", ".zyh_img2");
+        var imgurl2 = document.querySelector("#zyh_imgurl2");
+        obj2.up(function (q) {
+            if (q) {
+                imgurl2.value = q;
+            }
+        });
+        /*************上传主课程图片  结束*****************/
+
+        KindEditor.ready(function(K) {
+            window.editor = K.create('#editor_id');
+        });
+
+        $.validator.addMethod("etitle",function(value,element,params){
+            var etitle = /^[0-9a-zA-Z\s]*$/;
+            return this.optional(element)||(etitle.test(value));
+        },"请输入纯英文");
+
+        $("#form").validate({
+            rules:{
+                title:{
+                    required:true
+                },
+                etitle:{
+                    etitle:true,
+                    maxlength:255
+                },
+                summary:{
+                    maxlength:255
+                },
+                name:{
+                    maxlength:50
+                }
+            },
+            messages:{
+                title:{
+                    required:"请输入标题"
+                },
+                etitle:{
+                    maxlength:"最多输入255个字符"
+                },
+                summary:{
+                    maxlength:"最多输入255个字"
+                },
+                name:{
+                    maxlength:"最多输入50个字"
+                }
+            }
+        })
+    }
+</script>
+</html>

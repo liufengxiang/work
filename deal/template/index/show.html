@@ -1,0 +1,86 @@
+{include file="index/header.html"}
+<link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css">
+<link rel="stylesheet" href="{CSS_PATH}/show.css">
+<script src="{JS_PATH}/show.js"></script>
+<div class="show-box">
+    <div class="showtop">
+        <div class="show-uname">{if $showresult[0]['uid']==0}官方发布{else}{$uresult[0]['nichen']}{/if}</div>
+        <div class="show-dianji">点击量：{$showresult[0]['wliulan']}</div>
+        <div class="show-time">发布时间：{$showresult[0]['wtime']}</div>
+        <div class="show-iphone">联系电话：{if $showresult[0]['uid']==0}18435179664{else}{$uresult[0]['uphone']}{/if}</div>
+    </div>
+    <div class="show-center">
+        <div class="show-img">
+            <div class="img img1"  style="background-image: url({if $showresult[0]['wimg1']}{$showresult[0]['wimg1']}{else}{IMG_PATH}/imgbg.jpg{/if})"></div>
+            <div class="img img2" style="background-image: url({if $showresult[0]['wimg2']}{$showresult[0]['wimg2']}{else}{IMG_PATH}/imgbg.jpg{/if})"></div>
+            <div class="img img3" style="background-image: url({if $showresult[0]['wimg3']}{$showresult[0]['wimg3']}{else}{IMG_PATH}/imgbg.jpg{/if})"></div>
+        </div>
+        <div class="show-message">
+            <h1 class="show-name">{$showresult[0]['wname']}</h1>
+            <div class="show-pirce">商品价格： <span>￥{$showresult[0]['wmuch']}.00</span></div>
+            <div class="show-show">详细介绍： <br>{$showresult[0]['wshow']}</div>
+            <div class="show-goumai"><a href="index.php?f=show&a=goumai&wid={$showresult[0]['wid']}">立即购买</a></div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name"></label>
+        <textarea class="form-control liuyancon" rows="3" style="resize: none" ></textarea>
+    </div>
+    <button type="button" uname1="{$showresult[0]['uid']}" uname2="{$result['uid']}" cid="{$showresult[0]['wid']}"  class="btn btn-warning liuyanbtn">留言</button>
+    <button type="button" class="btn btn-danger quxiaoliuyan">取消</button>
+
+
+
+
+
+    <div class="liuyanbox">
+        <h3>一共有 <span>{count($lyresult)}</span>条留言</h3>
+        <!--原版留言-->
+        <div class="liuyan" style="display: none" >
+            <div class="lymessage">
+                <div class="touxiang"></div>
+                <a href="">XXX</a>
+                <span>2000-10-10</span>
+            </div>
+            <div class="lycon">你说话真有意思</div>
+
+            <!--儿子-->
+            <div class="lyson" style="display: none">
+                <p><a href="">XXX</a><span>你可说</span></p>
+                <span>2011-1-1</span><span class="btn btn-default huifu1">回复</span>
+                <textarea class="form-control huifu2con" rows="3"  ></textarea>
+            </div>
+        </div>
+        <!--原版留言结束-->
+        <div class="liuyanqu"></div>
+
+
+
+
+        {foreach $lyresult $v}
+        <div class="liuyan" pid="{$v['mid']}">
+            <div class="lymessage">
+                <div class="touxiang" style="background-image: url({$v['uimg']})"></div>
+                <a href="javascript:;">{$v['nichen']}</a>
+                <span>{$v['mtime']}</span>
+            </div>
+            <div class="lycon">{$v['mshow']}</div>
+            <button type="button" class="btn btn-default huifu1">回复</button>
+            <button type="button" style="display: none" class="btn btn-default tijiao1">提交</button>
+            <textarea class="form-control huifu1con" rows="3"  ></textarea>
+            {foreach $v['son'] $k}
+            <div class="lyson">
+                <p><a href="">{$k['nichen']}</a>:<span>{$k['mshow']}</span></p>
+                <span>{$k['mtime']}</span><span class="btn btn-default huifu1">回复</span>
+                <textarea class="form-control huifu2con" rows="3"  ></textarea>
+            </div>
+            {/foreach}
+        </div>
+        {/foreach}
+    </div>
+</div>
+{include file="index/notice.html"}
+<div class="czcgbox">
+    <div class="czcg">操作成功</div>
+</div>
+{include file="index/footer.html"}

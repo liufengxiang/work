@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>login</title>
+	</head>
+	<link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css">
+	<link rel="stylesheet" href="{CSS_PATH}/login.css" />
+	<body style="background: url({IMG_PATH}/bght.jpg)">
+		<div class="box">
+			<form action="index.php?m=admin&a=yanzheng" role="form" method="post">
+				<p class="logo">+blogs</p>
+				<div class="form-group">
+					<input type="text" class="form-control" name="user" id="name" placeholder="账户输入">
+				</div>
+				<div class="form-group">
+					<input type="password" name="pass" class="form-control" placeholder="密码输入">
+				</div>
+				<div class="form-group">
+					<input type="text" name="code" id="code" class="form-control" placeholder="验证码">
+					<img src="index.php?m=admin&a=code" onclick='this.src="index.php?m=admin&a=code&"+Math.random()' alt="" />
+				</div>
+				<button type="submit" class="btn btn-default">登录</button>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>所有管理员</title>
+    <link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css" />
+    <link rel="stylesheet" href="{CSS_PATH}/tablebox.css" />
+    <script src="{JS_PATH}/jquery-min.js"></script>
+</head>
+<body>
+<div class="box">
+    <form action="index.php?m=admin&f=cate&a=addadmin" method="post">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>管理员账号</th>
+                    <th>管理员密码</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>添加新的管理员</td>
+                    <td></td>
+                    <td><a href="index.php?m=admin&f=cate&a=addadmin" class='add'>添加</a></td>
+                </tr>
+            {foreach $result as $v}
+                <tr>
+                    <td>{$v["aname"]}</td>
+                    <td>{$v["apass"]}</td>
+                    <td id="{$v['aid']}"><a class='del'>删除</a></td>
+                </tr>
+            {/foreach}
+            </tbody>
+        </table>
+    </form>
+</div>
+</body>
+</html>
+<script>
+$(".del").click(function () {
+    if(confirm("确定删除管理员吗？")){
+        location.href="index.php?m=admin&f=cate&a=deladmin&aid="+$(this).parent().attr("id");
+    }
+})
+</script>

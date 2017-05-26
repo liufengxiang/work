@@ -1,0 +1,48 @@
+{include file="index/header.html"}
+<link rel="stylesheet" href="{CSS_PATH}/geren.css">
+<script src="{JS_PATH}/upload.js"></script>
+<div class="box">
+    <div class="mybox">
+        <div class="img" style="background-image: url({if $uresult['uimg']!=''}{$uresult['uimg']}{else}{IMG_PATH}/touxiang.jpg{/if})"></div>
+        <a class="uname">{$zxname}</a>
+        <input type="file" id="setimg">
+    </div>
+    <div class="biaoti">
+        <div class="biaotili">
+            <span>{$wodeguanzhu}</span><br>
+            <a href="index.php?f=geren&a=wodeguanzhu" target="bottom">我的关注</a>
+        </div>
+        <div class="biaotili">
+            <span>{$guanzhuwode}</span><br>
+            <a href="index.php?f=geren&a=guanzhuwode" target="bottom">关注我的</a>
+        </div>
+        <div class="biaotili">
+            <span>{$wodewenzhang}</span><br>
+            <a href="index.php?f=geren&a=wodewenzhang" target="bottom">我的文章</a>
+        </div>
+        <div class="biaotili">
+            <span>{$wodeshoucang}</span><br>
+            <a href="index.php?f=geren&a=wodeshoucang" target="bottom">我的收藏</a>
+        </div>
+    </div>
+    <div class="neirong">
+        <iframe name="bottom" frameborder="0">
+
+        </iframe>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var up=new upload("index.php?a=addimg","#setimg",function (text) {
+        $(".img").css("background-image","url("+text+")");
+        $.ajax({
+            url:"index.php?f=geren&a=setimg",
+            data: "uimg="+text,
+            success:function (e) {
+                alert("修改成功！");
+            }
+        })
+    })
+    up.upload();
+</script>

@@ -1,0 +1,82 @@
+body{
+    background: rgba(255,255,255,.5) url(../img/geren.jpg);
+}
+.box{
+    width: 960px;
+    box-sizing: border-box;
+    padding: 30px 15px 0;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.mybox{
+    width: 625px;
+    overflow: hidden;
+    padding-left: 15px;
+}
+.touxiang{
+    display:block;
+    width: 80px;
+    height:80px;
+    border-radius: 50%;
+    float: left;
+    overflow: hidden;
+}
+.uname{
+    display:block;
+    width: 200px;
+    height:80px;
+    float: left;
+    margin-left: 30px;
+    font-size: 30px;
+    color: #fff;
+    line-height: 80px;
+}
+.img{
+    margin-left: 60px;
+    margin-bottom: 30px;
+    width: 140px;
+    height: 140px;
+    display: block;
+    float: left;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center center;
+}
+#setimg{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.biaoti{
+    overflow: hidden;
+    width: auto;
+    margin: 20px;
+}
+.biaotili{
+    height: 80px;
+    float: left;
+    padding: 10px 10px 0;
+    width:100px;
+    text-align: center;
+    color: #fff;
+    line-height: 30px;
+}
+.biaotili:hover a{
+   color: #333;
+}
+.biaotili>a{
+    color: #fff;
+    transition: all .5s;
+}
+.neirong{
+    width: 100%;
+    min-height:340px;
+    border-top:2px solid #fff;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+iframe{
+    width: 110%;
+    min-height:340px;
+}
