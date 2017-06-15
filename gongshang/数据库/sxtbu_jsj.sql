@@ -121,9 +121,9 @@ CREATE TABLE IF NOT EXISTS `gs_cooperation` (
 --
 
 INSERT INTO `gs_cooperation` (`coid`, `coname`, `introduce`, `cotime`, `ntime`, `logoimg`, `link`, `state`, `name`) VALUES
-(1, '这是企业名称', '这是企业介绍', '0000-00-00', '2017-04-07 02:30:32', 'http://localhost/gongshangs1/upload/2017-04-07/14915322312016-07-01_16-25.jpg', '这是企业链接', 1, '计算机信息工程学院'),
-(2, '这是企业名称2', '这是企业介绍2', '222', '2017-04-07 02:49:26', 'http://localhost/gongshangs1/upload/2017-04-07/14915322312016-07-01_16-25.jpg', '这是企业链接2', 1, '计算机信息工程学院2'),
-(3, '这是企业名称2', '这是企业介绍2', '222', '2017-04-07 02:49:26', 'http://localhost/gongshangs1/upload/2017-04-07/14915322312016-07-01_16-25.jpg', '这是企业链接2', 1, '计算机信息工程学院2');
+(1, '这是企业名称', '这是企业介绍', '0000-00-00', '2017-04-07 02:30:32', 'http://localhost/gongshang/upload/2017-04-07/14915322312016-07-01_16-25.jpg', '这是企业链接', 1, '计算机信息工程学院'),
+(2, '这是企业名称2', '这是企业介绍2', '222', '2017-04-07 02:49:26', 'http://localhost/gongshang/upload/2017-04-07/14915322312016-07-01_16-25.jpg', '这是企业链接2', 1, '计算机信息工程学院2'),
+(3, '这是企业名称2', '这是企业介绍2', '222', '2017-04-07 02:49:26', 'http://localhost/gongshang/upload/2017-04-07/14915322312016-07-01_16-25.jpg', '这是企业链接2', 1, '计算机信息工程学院2');
 
 -- --------------------------------------------------------
 
@@ -265,7 +265,7 @@ CREATE TABLE IF NOT EXISTS `gs_info` (
 --
 
 INSERT INTO `gs_info` (`id`, `host`, `imgfile`) VALUES
-(1, 'localhost', 'gongshangs1/static/upload');
+(1, 'localhost', 'gongshang/static/upload');
 
 -- --------------------------------------------------------
 
@@ -293,9 +293,9 @@ CREATE TABLE IF NOT EXISTS `gs_news` (
 --
 
 INSERT INTO `gs_news` (`nid`, `nposition`, `cid`, `title`, `etitle`, `con`, `ntime`, `hits`, `summary`, `name`, `nimgurl`) VALUES
-(9, 3, 31, '内容44445555555', '', '内容4444444444内容4444444444内容4444444444内容4444444444内容4444444444内容4444444444内容4444444444内容4444444444', '2017-04-06 07:09:22', 294, '内容44445555555', '山西工商学院', 'http://localhost/gongshangs1/upload/2017-04-11/1491905081ASCII.jpg'),
-(10, 2, 31, '内容4422', '', '内容4444444444内容4444444444内容4444444444内容4444444444内容4444444444内容4444444444内容4444444444内容4444444444内容4444444444', '2017-04-06 07:09:29', 244, '内容4422', '山西工商学院', 'http://localhost/gongshangs1/upload/2017-04-07/14915477672016-07-01_16-25.jpg'),
-(11, 1, 36, '这是大赛获奖', '', '内容<span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span>内容<span style="font-size:12.8px;">内容</span>', '2017-04-07 06:47:29', 15, '这是摘要', '山西工商学院', 'http://localhost/gongshangs1/upload/2017-04-07/14915476312016-07-01_16-25.jpg'),
+(9, 3, 31, '内容44445555555', '', '内容4444444444内容4444444444内容4444444444内容4444444444内容4444444444内容4444444444内容4444444444内容4444444444', '2017-04-06 07:09:22', 294, '内容44445555555', '山西工商学院', 'http://localhost/gongshang/upload/2017-04-11/1491905081ASCII.jpg'),
+(10, 2, 31, '内容4422', '', '内容4444444444内容4444444444内容4444444444内容4444444444内容4444444444内容4444444444内容4444444444内容4444444444内容4444444444', '2017-04-06 07:09:29', 244, '内容4422', '山西工商学院', 'http://localhost/gongshang/upload/2017-04-07/14915477672016-07-01_16-25.jpg'),
+(11, 1, 36, '这是大赛获奖', '', '内容<span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span><span style="font-size:12.8px;">内容</span>内容<span style="font-size:12.8px;">内容</span>', '2017-04-07 06:47:29', 15, '这是摘要', '山西工商学院', 'http://localhost/gongshang/upload/2017-04-07/14915476312016-07-01_16-25.jpg'),
 (12, 1, 31, '这是欣慰222', '', '这是欣慰222', '2017-04-07 06:48:06', 224, '这是欣慰222这是欣慰222这是欣慰222这是欣慰222', '山西工商学院', '');
 
 -- --------------------------------------------------------
@@ -479,14 +479,14 @@ CREATE TABLE IF NOT EXISTS `gs_user` (
 --
 
 INSERT INTO `gs_user` (`uid`, `uname`, `unickname`, `upass`, `uimage`, `udate`) VALUES
-(6, 'zhangyuhui', '张宇辉', 'e10adc3949ba59abbe56e057f20f883e', 'http://localhost/gongshangs1/static/upload/17-04/1491879279taobao.png', '2017-04-07 09:19:01'),
-(7, 'likai', '李凯', 'e10adc3949ba59abbe56e057f20f883e', 'http://localhost/gongshangs1/static/upload/17-04/1491887523ASCII.jpg', '2017-04-07 10:55:11'),
-(8, 'duanxiaojie', '段晓杰', '827ccb0eea8a706c4c34a16891f84e7b', 'http://localhost/gongshangs1/static/upload/17-04/14915727463.jpg', '2017-04-07 13:07:13'),
-(9, 'xiaojie', '晓杰', '827ccb0eea8a706c4c34a16891f84e7b', 'http://localhost/gongshangs1/static/upload/17-04/14915726801.png', '2017-04-07 13:40:11'),
-(10, 'lisisi', '李四四', '827ccb0eea8a706c4c34a16891f84e7b', 'http://127.0.0.1/gongshangs1/static/index/images/touxiang.jpg', '2017-04-07 14:05:52'),
-(11, 'xiaopang', '小胖', '827ccb0eea8a706c4c34a16891f84e7b', 'http://127.0.0.1/gongshangs1/static/index/images/touxiang.jpg', '2017-04-07 15:06:49'),
-(12, 'zhangsan', '张三', 'e10adc3949ba59abbe56e057f20f883e', 'http://localhost/gongshangs1/static/upload/17-04/1491619661taobao.png', '2017-04-08 02:46:59'),
-(13, 'xiaoxiao', '小辉辉', '827ccb0eea8a706c4c34a16891f84e7b', 'http://localhost/gongshangs1/static/index/images/touxiang.jpg', '2017-04-13 03:01:59');
+(6, 'zhangyuhui', '张宇辉', 'e10adc3949ba59abbe56e057f20f883e', 'http://localhost/gongshang/static/upload/17-04/1491879279taobao.png', '2017-04-07 09:19:01'),
+(7, 'likai', '李凯', 'e10adc3949ba59abbe56e057f20f883e', 'http://localhost/gongshang/static/upload/17-04/1491887523ASCII.jpg', '2017-04-07 10:55:11'),
+(8, 'duanxiaojie', '段晓杰', '827ccb0eea8a706c4c34a16891f84e7b', 'http://localhost/gongshang/static/upload/17-04/14915727463.jpg', '2017-04-07 13:07:13'),
+(9, 'xiaojie', '晓杰', '827ccb0eea8a706c4c34a16891f84e7b', 'http://localhost/gongshang/static/upload/17-04/14915726801.png', '2017-04-07 13:40:11'),
+(10, 'lisisi', '李四四', '827ccb0eea8a706c4c34a16891f84e7b', 'http://127.0.0.1/gongshang/static/index/images/touxiang.jpg', '2017-04-07 14:05:52'),
+(11, 'xiaopang', '小胖', '827ccb0eea8a706c4c34a16891f84e7b', 'http://127.0.0.1/gongshang/static/index/images/touxiang.jpg', '2017-04-07 15:06:49'),
+(12, 'zhangsan', '张三', 'e10adc3949ba59abbe56e057f20f883e', 'http://localhost/gongshang/static/upload/17-04/1491619661taobao.png', '2017-04-08 02:46:59'),
+(13, 'xiaoxiao', '小辉辉', '827ccb0eea8a706c4c34a16891f84e7b', 'http://localhost/gongshang/static/index/images/touxiang.jpg', '2017-04-13 03:01:59');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
