@@ -90,8 +90,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!./node_modules/css-loader/index.js!./app.css", function() {
-			var newContent = require("!!./node_modules/css-loader/index.js!./app.css");
+		module.hot.accept("!!./node_modules/css-loader/index.js!./node_modules/less-loader/dist/index.js!./index.less", function() {
+			var newContent = require("!!./node_modules/css-loader/index.js!./node_modules/less-loader/dist/index.js!./index.less");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -109,7 +109,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "#test{\r\n    background:red;\r\n    width:100px;\r\n    height:100px;\r\n    color:blue;\r\n}\r\nbody{\r\n    background: red;\r\n}", ""]);
+exports.push([module.i, "#test {\n  background: red;\n  width: 100px;\n  height: 100px;\n  color: yellow;\n}\nbody {\n  background: red;\n}\n", ""]);
 
 // exports
 
