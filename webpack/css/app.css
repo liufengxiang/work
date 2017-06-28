@@ -1,9 +1,9 @@
-html,body{
-    color: red;
-    background: red;
-}
-.box{
-    width: 100px;
+#test{
+    background:red;
+    width:100px;
     height:100px;
+    color:blue;
+}
+body{
     background: red;
 }
